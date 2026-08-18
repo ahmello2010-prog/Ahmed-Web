@@ -290,7 +290,9 @@ body.loaded main {
     flex-direction: column;
     justify-content: center;
 }
-
+#contact {
+    min-height: 180vh;
+}
 .hero-wrapper {
     display: flex;
     align-items: center;
