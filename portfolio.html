@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ahmed Wael | Selected Artifacts</title>
+
+        <!-- ملف التنسيق الموحد عالي التباين (Obsidian Onyx) -->
+        <link href="css/style.css" rel="stylesheet" />
+        <style>
+            /* ==========================================================================
+       THEATRICAL EXHIBITION SPACE - PORTFOLIO STYLES (COMPACT HIGH-CONTRAST)
+       ========================================================================== */
+            @import url("https://googleapis.com");
+
+            :root {
+                --bg-obsidian: #040405; /* أسود ملكي فخم وعميق جداً لراحة العين */
+                --accent-gold-bright: #d9b88c; /* ذهبي مضيء عالي التباين لتسهيل الرؤية */
+                --text-pure-white: #ffffff; /* أبيض ناصع بأعلى درجات الوضوح للنصوص */
+                --text-slate-light: #94a3b8; /* رمادي منير وواضح جداً للفقرات */
+                --surface-card-dark: #0d0d11; /* لون الصناديق الأساسي */
+
+                /* 🌟 تعيين المتغيرات للخطوط المحدثة الجديدة بدقة */
+                --font-serif-display: "Bebas Neue", sans-serif;
+                --font-sans-ui: "Roboto Condensed", sans-serif;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                background-color: var(--bg-obsidian);
+                color: var(--text-pure-white);
+                font-family: var(--font-sans-ui);
+                overflow-x: hidden;
+                position: relative;
+            }
+
+            /* 🎬 الستائر المسرحية العكسية عند الدخول لصفحة المعرض */
+            .portfolio-loader-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                pointer-events: none;
+            }
+
+            .portfolio-curtain {
+                position: absolute;
+                top: 0;
+                width: 50%;
+                height: 100%;
+                background: #020203;
+                transition: transform 1.6s cubic-bezier(0.86, 0, 0.07, 1);
+                transform: translateX(0);
+            }
+            .left-p-curtain {
+                left: 0;
+            }
+            .right-p-curtain {
+                right: 0;
+            }
+
+            /* حركة انقسام الستائر للخارج وتدرج الاختفاء */
+            .portfolio-loader-overlay.reveal-space .left-p-curtain {
+                transform: translateX(-100%);
+            }
+            .portfolio-loader-overlay.reveal-space .right-p-curtain {
+                transform: translateX(100%);
+            }
+
+            .portfolio-loader-content {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                transition: opacity 0.5s ease;
+            }
+
+            .portfolio-loader-title {
+                font-family: var(--font-serif-display);
+                font-size: clamp(2.5rem, 6vw, 4.5rem);
+                letter-spacing: 6px;
+                color: #fff;
+                margin-bottom: 10px;
+                line-height: 1;
+            }
+
+            .portfolio-loader-sub {
+                font-family: var(--font-sans-ui);
+                font-size: 12px;
+                letter-spacing: 4px;
+                color: var(--accent-gold-bright);
+                text-transform: uppercase;
+            }
+
+            .portfolio-loader-overlay.reveal-space .portfolio-loader-content {
+                opacity: 0;
+            }
+
+            /* 🏢 شريط التنقل العلوي عالي التباين */
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 40px 8%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: rgba(4, 4, 5, 0.85);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+                z-index: 1000;
+            }
+
+            .brand {
+                font-family: var(--font-serif-display);
+                font-size: 32px;
+                letter-spacing: 2px;
+                color: var(--text-pure-white);
+                line-height: 1;
+            }
+            .brand .logo-dot {
+                color: var(--accent-gold-bright);
+                text-shadow: 0 0 10px var(--accent-gold-bright);
+            }
+
+            .bar {
+                display: flex;
+                list-style: none;
+            }
+
+            .navbar-link {
+                text-decoration: none;
+                color: var(--text-slate-light);
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                transition: color 0.4s ease;
+            }
+            .navbar-link:hover {
+                color: var(--text-pure-white);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+
+            .navbar-link i {
+                margin-right: 8px;
+            }
+
+            /* 🏢 هندسة الفراغات لقسم الاستوديو */
+            .portfolio-main-space {
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            body.portfolio-loaded .portfolio-main-space {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .section {
+                min-height: 100vh;
+                padding: 220px 8% 120px 8%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .portfolio-studio-header {
+                max-width: 800px;
+                margin-bottom: 60px;
+            }
+
+            .section-tag {
+                font-size: 13px;
+                color: var(--accent-gold-bright);
+                letter-spacing: 4px;
+                margin-bottom: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            .portfolio-studio-title {
+                font-family: var(--font-serif-display);
+                font-size: clamp(3.5rem, 7vw, 6rem);
+                line-height: 1;
+                color: var(--text-pure-white);
+                margin-top: 15px;
+                margin-bottom: 25px;
+                letter-spacing: 1px;
+            }
+
+            .portfolio-studio-desc {
+                font-size: 16px;
+                color: var(--text-slate-light);
+                line-height: 1.8;
+                font-weight: 300;
+            }
+
+            /* 🌟 شبكة الكروت الكروماتية الملونة والمستقرة بصرياً */
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 40px;
+                margin-top: 20px;
+            }
+
+            .project-card {
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                opacity: 0;
+                transform: translateY(25px);
+                transition:
+                    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.4s ease;
+            }
+
+            /* الكلاس التفعيلي التلقائي عبر الـ JS للظهور الناعم المتتالي */
+            .project-card.reveal-active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .project-img {
+                position: relative;
+                height: 240px;
+                overflow: hidden;
+                background: #000;
+            }
+
+            .project-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.7;
+                transition:
+                    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.6s;
+            }
+
+            .project-card:hover .project-img img {
+                transform: scale(1.03);
+                opacity: 1;
+            }
+
+            .project-info {
+                padding: 35px;
+            }
+
+            .project-info h4 {
+                font-family: var(--font-serif-display);
+                font-size: 26px;
+                margin-bottom: 12px;
+                letter-spacing: 1px;
+                line-height: 1;
+            }
+
+            .project-info p {
+                font-size: 14px;
+                line-height: 1.7;
+                font-weight: 300;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .project-info p i {
+                font-size: 14px;
+                transition: transform 0.3s ease;
+            }
+
+            .project-card:hover .project-info p i {
+                transform: translate(3px, -3px);
+            }
+
+            /* ==========================================================================
+       🖌️ التلوين الكروماتي الفريد والفخم لكل كارت على حدة تماشياً مع كود الـ JSON
+       ========================================================================== */
+
+            /* 🌿 1. كارت النباتات Little Plants */
+            .plants-style {
+                background: #071a12;
+                border-color: rgba(46, 117, 89, 0.2);
+            }
+            .plants-style h4 {
+                color: #52c498;
+            }
+            .plants-style p {
+                color: #a3d9c3;
+            }
+            .plants-style:hover {
+                box-shadow: 0 20px 40px rgba(82, 196, 152, 0.15);
+                border-color: #52c498;
+            }
+
+            /* 🎓 2. كارت الشهادة والمهارات Certificate */
+            .certificate-style {
+                background: #1c140a;
+                border-color: rgba(162, 131, 92, 0.2);
+            }
+            .certificate-style h4 {
+                color: #d9b88c;
+            }
+            .certificate-style p {
+                color: #ebd8bf;
+            }
+            .certificate-style:hover {
+                box-shadow: 0 20px 40px rgba(217, 184, 140, 0.15);
+                border-color: #d9b88c;
+            }
+
+            /* 🎵 3. كارت محول الإم بي ثري MP3 Converter */
+            .mp3-style {
+                background: #131417;
+                border-color: rgba(148, 163, 184, 0.2);
+            }
+            .mp3-style h4 {
+                color: #cbd5e1;
+            }
+            .mp3-style p {
+                color: #94a3b8;
+            }
+            .mp3-style:hover {
+                box-shadow: 0 20px 40px rgba(148, 163, 184, 0.15);
+                border-color: #cbd5e1;
+            }
+
+            /* ⚽ 4. كارت كرة القدم النيون Neon Football */
+            .football-style {
+                background: #071924;
+                border-color: rgba(14, 165, 233, 0.2);
+            }
+            .football-style h4 {
+                color: #38bdf8;
+            }
+            .football-style p {
+                color: #bae6fd;
+            }
+            .football-style:hover {
+                box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+                border-color: #38bdf8;
+            }
+
+            /* 🕹️ 5. كارت التسعينات Nostalgia 90s */
+            .nostalgia-style {
+                background: #1c0d16;
+                border-color: rgba(236, 72, 153, 0.2);
+            }
+            .nostalgia-style h4 {
+                color: #f472b6;
+            }
+            .nostalgia-style p {
+                color: #fbcfe8;
+            }
+            .nostalgia-style:hover {
+                box-shadow: 0 20px 40px rgba(244, 114, 182, 0.15);
+                border-color: #f472b6;
+            }
+
+            /* 🍣 6. كارت الطعام الآسيوي Asian Food */
+            .asian-style {
+                background: #1c0f0d;
+                border-color: rgba(249, 115, 22, 0.2);
+            }
+            .asian-style h4 {
+                color: #fb923c;
+            }
+            .asian-style p {
+                color: #ffedd5;
+            }
+            .asian-style:hover {
+                box-shadow: 0 20px 40px rgba(251, 146, 60, 0.15);
+                border-color: #fb923c;
+            }
+
+            /* 🪐 7. كارت السياحة الفلكية Venus Tours */
+            .venus-style {
+                background: #0f0a1c;
+                border-color: rgba(139, 92, 246, 0.2);
+            }
+            .venus-style h4 {
+                color: #a78bfa;
+            }
+            .venus-style p {
+                color: #ede9fe;
+            }
+            .venus-style:hover {
+                box-shadow: 0 20px 40px rgba(167, 139, 250, 0.15);
+                border-color: #a78bfa;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 🎬 الستائر المسرحية العكسية (تفتح تلقائياً فور دخول الزائر للصفحة) -->
+        <div id="portfolio-intro-loader" class="portfolio-loader-overlay">
+            <div class="portfolio-curtain left-p-curtain"></div>
+            <div class="portfolio-curtain right-p-curtain"></div>
+            <div class="portfolio-loader-content">
+                <div class="portfolio-loader-title">SELECTED ARTIFACTS</div>
+                <div class="portfolio-loader-sub">EXHIBITION SPACE</div>
+            </div>
+        </div>
+
+        <!-- 🗺️ شريط التنقل الخاص بصفحة المعرض مع زر العودة للخلف -->
+        <header>
+            <nav class="navbar">
+                <div class="brand">AHMED<span class="logo-dot">|WEB</span></div>
+                <ul class="bar">
+                    <li>
+                        <a href="index.html" class="navbar-link back-home-link"
+                            ><i class="fa-solid fa-arrow-left"></i> Return To Concept</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 🕹️ شبكة عرض كروت المشاريع السينمائية واضحة المعالم -->
+        <main class="portfolio-main-space">
+            <section class="section portfolio-studio-section">
+                <div class="portfolio-studio-header">
+                    <h2 class="section-tag">03 // ARCHIVE</h2>
+                    <h1 class="portfolio-studio-title">Digital Creations<br />& Architectural Code.</h1>
+                    <p class="portfolio-studio-desc">
+                        A curated collection of web environments, interfaces, and structural logic crafted with
+                        uncompromised precision.
+                    </p>
+                </div>
+
+                <!-- 🌟 شبكة المشاريع الحرة المباشرة التي يتم جلبها تلقائياً عبر الجافا سكريبت -->
+                <div class="projects-grid" id="portfolioProjectsContainer"></div>
+            </section>
+        </main>
+
+        <!-- 📚 استدعاء المكتبات وجافا سكريبت الخاص بالمعرض -->
+        <script src="https://fontawesome.com" crossorigin="anonymous"></script>
+        <script>
+            // دالة جلب المشاريع ديناميكياً وتلوين الكروت بستايل هندسي فاخر
+            async function loadExhibitionProjects() {
+                try {
+                    const response = await fetch("projects.json");
+                    if (!response.ok) throw new Error("JSON configuration data not discovered");
+                    const projects = await response.json();
+                    const container = document.getElementById("portfolioProjectsContainer");
+
+                    if (!container) return;
+
+                    // قمنا بإضافة الكلاس المخصص لكل كارت ديناميكياً هنا ليعمل التلوين الفريد
+                    container.innerHTML = projects
+                        .map(
+                            (project) => `
+            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-card ${project.class || ""}">
+                <div class="project-img">
+                    <img src="${project.image}" alt="${project.title} Preview" />
+                </div>
+                <div class="project-info">
+                    <h4>${project.title}</h4>
+                    <p>${project.description} <i class="${project.icon || "fa-solid fa-arrow-up-right-from-square"}"></i></p>
+                </div>
+            </a>
+        `
+                        )
+                        .join("");
+
+                    // تشغيل أنيميشن الظهور الناعم للكروت بعد جلبها
+                    setTimeout(() => {
+                        const cards = document.querySelectorAll(".project-card");
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.classList.add("reveal-active");
+                            }, index * 100); // ظهور متتالي (Staggered Animation) فخم جداً
+                        });
+                    }, 100);
+                } catch (error) {
+                    console.error("Exhibition space architecture load failure:", error);
+                }
+            }
+
+            // تشغيل سلسلة حركات فتح الستائر المسرحية فور دخول الصفحة
+            document.addEventListener("DOMContentLoaded", () => {
+                loadExhibitionProjects();
+
+                const portfolioLoader = document.getElementById("portfolio-intro-loader");
+                if (portfolioLoader) {
+                    setTimeout(() => {
+                        portfolioLoader.classList.add("reveal-space");
+                        document.body.classList.add("portfolio-loaded");
+                        setTimeout(() => {
+                            portfolioLoader.style.display = "none";
+                        }, 1600);
+                    }, 500);
+                }
+            });
+        </script>
+    </body>
+</html>

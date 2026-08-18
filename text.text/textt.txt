@@ -1,0 +1,3370 @@
+@media (min-height: 1200px) {
+    .robot {
+        display: none;
+    }
+    body::before {
+        height: 250vh;
+    }
+    .par {
+        margin-left: 17%;
+        margin-top: 18.6%;
+    }
+    #home,
+    #about {
+        height: 75vh;
+    }
+    #contact {
+        height: 40vh;
+    }
+    .name {
+        color: rgb(188, 186, 234);
+
+        font-weight: 700;
+        font-size: 4rem;
+    }
+
+    .who {
+        color: white;
+
+        font-weight: 700;
+        font-size: 4rem;
+        margin: 2px 25px;
+    }
+
+    .pro {
+        font-size: 2.4rem;
+        font-weight: 300;
+        margin: 2px 55px;
+    }
+
+    .h2 {
+        font-weight: 500;
+        font-size: 2.3rem;
+        margin: 5px 14px 10px 140px;
+        padding: 15px;
+    }
+
+    .brand {
+        font-weight: 500;
+        font-size: 2.5rem;
+    }
+    .logo {
+        font-weight: 500;
+        font-size: 2.1rem;
+    }
+
+    .navbar ul li a {
+        font-weight: 200;
+        font-size: 1.1rem;
+    }
+    .navbar {
+        margin-top: 20px;
+    }
+
+    #about p {
+        color: white;
+        width: 109%;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 8%;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    img.mee {
+        width: 290px;
+        margin-right: 1%;
+    }
+
+    footer.end {
+        margin-left: 30%;
+    }
+
+    h3 {
+        margin-bottom: 90%;
+    }
+
+    .feel {
+        margin-bottom: 58px;
+        font-size: 2.4rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1.4rem;
+    }
+
+    li.message {
+        margin-top: 50px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu input[type="password"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1.7rem;
+    }
+
+    .user-menu textarea {
+        height: 250px;
+        resize: none;
+    }
+    i.fa-instagram {
+        font-size: 40px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 40px !important;
+    }
+
+    i.fa-facebook {
+        font-size: 40px !important;
+    }
+
+    i.fa-x-twitter {
+        font-size: 44px !important;
+    }
+}
+@media (max-width: 1080px) {
+    .robot {
+        right: -216px;
+    }
+    .par {
+        left: 2%;
+        top: 26%;
+    }
+    .h2 {
+        margin: 5px 14px 10px 23%;
+    }
+    .pro {
+        margin: 2px 55px 2px 39px;
+    }
+    a.con-but h3 {
+        margin-left: 186px;
+    }
+    #about p {
+        width: 90%;
+        padding: 0;
+        margin-bottom: 0;
+        font-size: 1rem;
+        margin-left: 0;
+    }
+    footer.end {
+        width: 29%;
+        left: 5%;
+        margin-top: 1%;
+        font-size: 1rem;
+    }
+    h3 {
+        margin-bottom: 60%;
+        font-size: 3rem;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 2%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 210px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media (max-width: 1000px) {
+    .par {
+        left: 20%;
+        top: 8%;
+    }
+    .feel {
+        margin-bottom: 0%;
+        font-size: 2rem;
+    }
+    .glass {
+        width: 770px;
+        height: 780px;
+    }
+    .cardd {
+        padding-top: 10%;
+    }
+    .user-menu textarea {
+        height: 200px;
+    }
+    .i {
+        font-size: 4rem;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media (max-width: 975px) {
+    .robot {
+        display: none;
+    }
+    #about p {
+        width: 125%;
+        padding: 40px;
+    }
+    footer.end {
+        margin-left: 40%;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media (max-width: 913px) {
+    .par {
+        left: 0%;
+        top: 24.2%;
+    }
+    a.con-but h3 {
+        width: 67%;
+        padding: 20px;
+        font-size: 2.6rem;
+        margin-left: 100px;
+        margin-top: 34%;
+    }
+    .name {
+        font-size: 3.8rem;
+    }
+    .who {
+        color: white;
+        font-family: "BBH Sans Hegarty";
+        font-weight: 600;
+        font-size: 3.8rem;
+        margin: 2px 25px;
+        animation-name: swipe;
+        animation-duration: 4s;
+        animation-timing-function: ease-in-out;
+    }
+
+    .pro {
+        color: white;
+        position: absolute;
+        font-size: 2.4rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+        margin-top: 30px;
+        right: -200px;
+        left: -50px;
+        animation-name: pro;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+        animation-delay: 2s;
+    }
+    h1.About {
+        color: white;
+        font-size: 1.6rem;
+        position: absolute;
+        font-family: "BBH Sans Hegarty";
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-align: center;
+        margin-left: 36%;
+        margin-top: -7%;
+        word-spacing: 7px;
+    }
+    .h2 {
+        font-weight: 500;
+        font-size: 2.9rem;
+        margin: 9px 14px 10px 80px;
+        padding: 15px;
+    }
+
+    .brand {
+        font-weight: 500;
+        font-size: 2.5rem;
+    }
+    .logo {
+        font-weight: 500;
+        font-size: 2.1rem;
+    }
+
+    .navbar ul li a {
+        font-weight: 200;
+        font-size: 1.6rem;
+    }
+    .navbar {
+        margin-top: 20px;
+    }
+
+    #about p {
+        color: white;
+        width: 88%;
+        text-align: left;
+        margin-left: 24%;
+        margin-top: 8%;
+        padding: 20px;
+        font-size: 1.4rem;
+    }
+
+    .portfolio-btn {
+        position: absolute;
+        margin-top: 640px;
+        padding: 12px 25px;
+        margin-right: 60%;
+        background: rgba(255, 255, 255, 0.21);
+        border: 1px solid rgba(143, 139, 237, 0.3);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 15px rgba(143, 139, 237, 0.1);
+    }
+
+    img.mee {
+        width: 170px;
+        position: absolute;
+        margin-right: 76%;
+    }
+
+    footer.end {
+        margin-left: 45%;
+    }
+
+    .feel {
+        margin-top: -290px;
+        font-size: 2.4rem;
+        margin-left: -10%;
+        font-family: "Merriweather";
+        font-weight: 900;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1.4rem;
+    }
+
+    li.message {
+        margin-top: 50px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu input[type="password"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1.7rem;
+    }
+
+    .user-menu textarea {
+        height: 250px;
+        resize: none;
+    }
+    i.fa-instagram {
+        font-size: 40px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 40px !important;
+    }
+
+    i.fa-facebook {
+        font-size: 40px !important;
+    }
+
+    i.fa-x-twitter {
+        font-size: 44px !important;
+    }
+    #contact {
+        height: 90vh;
+    }
+    .glass {
+        position: absolute;
+        width: 500px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        margin-top: 20%;
+        margin-left: 37%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media (max-width: 821px) {
+    .par {
+        left: 16%;
+        top: 10%;
+    }
+
+    .navbar {
+        margin-top: 15px;
+    }
+
+    h3 {
+        margin-bottom: 100%;
+    }
+
+
+    div.card {
+        right: 1%;
+        margin-left: 20%;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media (max-width: 541px) {
+    .robot {
+        display: none;
+    }
+
+    .navbar {
+        position: fixed;
+        margin-top: 2px;
+        text-align: justify;
+        z-index: 1000;
+        animation-name: updown;
+        animation-duration: 5s;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .navbar ul {
+        list-style: none;
+        transform: translateX(-120px);
+        padding: 0;
+        gap: 45px;
+        display: flex;
+        animation-name: links;
+        animation-duration: 3.4s;
+    }
+    .navbar ul li a {
+        color: rgba(240, 240, 240, 0.4);
+        text-decoration: none;
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.7rem;
+        text-shadow: 2px 2px #000;
+    }
+    .par {
+        top: 23%;
+        left: 16%;
+    }
+    .brand,
+    .logo {
+        font-size: 1rem;
+        margin-left: 0.7%;
+    }
+    .h2 {
+        margin: 3px 14px 10px 12px;
+        padding: 15px;
+        font-size: 2rem;
+    }
+    .who {
+        margin-left: -2%;
+        font-size: 2.7rem;
+        width: 100%;
+    }
+    .name {
+        font-size: 2.3rem;
+    }
+    .pro {
+        font-size: 1.3rem;
+        margin: 20px 0 2px 37px;
+        width: 100%;
+    }
+    a.con-but h3 {
+        width: 47%;
+        font-size: 1rem;
+        margin-left: 70px;
+        margin-top: 30%;
+    }
+    h1.About {
+        color: white;
+        font-size: 1rem;
+        position: absolute;
+        font-family: "BBH Sans Hegarty";
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-align: center;
+        margin-left: 33%;
+        top: 117%;
+        word-spacing: 7px;
+    }
+    img.mee {
+        margin-top: -57%;
+        left: 6%;
+        width: 90px;
+    }
+    #about p {
+        color: white;
+        width: 57%;
+        text-align: left;
+        line-height: 2;
+        transform: translateX(30px) translateY(-70px);
+        padding: 20px 5px;
+        font-size: 0.8rem;
+        background-color: rgba(15, 14, 14, 0.53);
+        border-radius: 19px;
+    }
+    footer.end {
+        display: none;
+    }
+
+    .feel {
+        position: absolute;
+        margin-top: 0%;
+    }
+    .portfolio-btn {
+        position: absolute;
+        width: 45%;
+        transform: translateX(130px) translateY(-120px);
+        padding: 12px 25px;
+        background: rgba(255, 255, 255, 0.21);
+        border: 1px solid rgba(143, 139, 237, 0.3);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 5px !important;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 15px rgba(143, 139, 237, 0.1);
+    }
+
+    span.Check {
+        font-size: 15px;
+        text-align: center;
+    }
+    i.fa-solid {
+        font-size: large;
+    }
+    .modal-overlay {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 385px;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 30px 15px;
+        border-radius: 16px;
+        box-sizing: border-box;
+        scrollbar-width: none;
+    }
+    .modal-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .close-btn {
+        top: 12px;
+        right: 18px;
+        font-size: 24px;
+    }
+
+    .modal-header {
+        margin-bottom: 20px;
+    }
+
+    .tech-icons-header {
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .tech-icons-header i {
+        font-size: 1.8rem;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 90%;
+        padding: 5px 0;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 230px;
+        border-radius: 12px;
+    }
+
+    .project-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .project-card:active {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+    }
+
+    .project-img {
+        height: 120px;
+    }
+}
+@media (max-width: 431px) {
+    ul.bar {
+        display: none;
+    }
+    .brand,
+    .logo {
+        font-size: 1.4rem;
+    }
+    .h2 {
+        margin: 43px 0 10px -18px;
+        padding: 15px;
+        font-size: 2rem;
+    }
+    .who {
+        margin-left: -12%;
+        font-size: 2.7rem;
+        width: 109%;
+    }
+    .name {
+        font-size: 2.3rem;
+    }
+    .pro {
+        font-size: 1.6rem;
+        margin: 20px 0 2px -39px;
+        width: 110%;
+    }
+    a.con-but h3 {
+        width: 67%;
+        font-size: 1.4rem;
+        margin-left: 23px;
+        margin-top: 10%;
+    }
+    img.mee {
+        margin-top: -140%;
+        left: -60%;
+        width: 130px;
+    }
+    #about p {
+        color: white;
+        width: 100%;
+        text-align: center;
+        margin-left: 32%;
+        margin-top: 40%;
+        padding: 20px;
+        font-size: 1rem;
+        background-color: rgba(15, 14, 14, 0.53);
+        border-radius: 19px;
+    }
+    footer.end {
+        display: none;
+    }
+    .glass {
+        width: 300px;
+        height: 600px;
+        margin-top: 0%;
+    }
+
+    .feel {
+        margin-bottom: 38px;
+        font-size: 1.2rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1rem;
+    }
+
+    li.message {
+        margin-top: 30px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu input[type="password"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.99rem;
+    }
+
+    .user-menu textarea {
+        height: 150px;
+        resize: none;
+    }
+    .i {
+        margin-top: -14%;
+    }
+    i.fa-instagram {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 24px !important;
+        margin: 10px;
+    }
+
+    i.fa-facebook {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-x-twitter {
+        margin: 10px;
+        font-size: 28px !important;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media (max-width: 415px) {
+    #home,
+    #about {
+        height: 90vh;
+    }
+    #contact {
+        height: 70vh;
+    }
+    .par {
+        position: static;
+    }
+    ul.bar {
+        display: none;
+    }
+    .h2 {
+        margin: 170px 14px 10px 0;
+        padding: 15px;
+        font-size: 1.5rem;
+    }
+    .who {
+        margin-left: -16%;
+        font-size: 2.7rem;
+        width: 106.7%;
+    }
+    .name {
+        font-size: 2.3rem;
+    }
+    .pro {
+        position: static;
+        font-size: 1.5rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+        margin: 20px 0 10px -80px;
+        width: 121%;
+    }
+    a.con-but h3 {
+        width: 67%;
+        margin-left: 9px;
+        margin-top: 10%;
+        font-size: 1.5rem;
+    }
+
+    h1.About {
+        color: white;
+        font-size: 1.2rem;
+        position: absolute;
+        font-family: "BBH Sans Hegarty";
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-align: center;
+        margin-left: 35%;
+        top: 87%;
+        word-spacing: 7px;
+    }
+    #about p {
+        color: white;
+        width: 57%;
+        position: absolute;
+        margin-left: 38%;
+        top: 79%;
+        padding: 10px 10px 10px 10px;
+        font-size: 0.9rem;
+        text-align: left;
+        background-color: rgba(15, 14, 14, 0.53);
+        border-radius: 19px;
+    }
+    img.mee {
+        border-radius: 60%;
+        float: right;
+        width: 26%;
+        top: -0;
+        animation: none;
+        position: relative;
+        margin-right: 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.66);
+        transition: transform 0.5s;
+    }
+    .portfolio-btn {
+        position: absolute;
+        margin-top: 45%;
+        padding: 12px 25px;
+        margin-right: 0;
+        background: rgba(255, 255, 255, 0.21);
+        border: 1px solid rgba(143, 139, 237, 0.3);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 15px rgba(143, 139, 237, 0.1);
+    }
+
+    .modal-overlay {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 385px;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 30px 15px;
+        border-radius: 16px;
+        box-sizing: border-box;
+        scrollbar-width: none;
+    }
+    .modal-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .close-btn {
+        top: 12px;
+        right: 18px;
+        font-size: 24px;
+    }
+
+    .modal-header {
+        margin-bottom: 20px;
+    }
+
+    .tech-icons-header {
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .tech-icons-header i {
+        font-size: 1.8rem;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 260px;
+        border-radius: 12px;
+    }
+
+    .project-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .project-card:active {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+    }
+
+    .project-img {
+        height: 140px;
+    }
+
+    .project-card:hover .project-img img {
+        transform: none;
+    }
+
+    .glass {
+        transform: translateY(-70px) translateX(10px);
+        width: 300px;
+        height: auto;
+        margin-top: 12%;
+        margin-left: 25%;
+        display: block;
+    }
+
+    .feel {
+        position: absolute;
+        margin-top: -90%;
+        font-size: 1.4rem;
+        font-family: "Merriweather";
+        font-weight: 800;
+        margin-left: -10%;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1rem;
+    }
+
+    li.message {
+        margin-top: 30px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu input[type="password"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.99rem;
+    }
+
+    .user-menu textarea {
+        height: 150px;
+        resize: none;
+    }
+    .i {
+        margin-top: -14%;
+    }
+    i.fa-instagram {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 24px !important;
+        margin: 10px;
+    }
+
+    i.fa-facebook {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-x-twitter {
+        margin: 10px;
+        font-size: 28px !important;
+    }
+}
+@media (max-width: 391px) {
+    ul.bar {
+        display: none;
+    }
+    .h2 {
+        margin: 63px 14px 10px -10px;
+        padding: 15px;
+        font-size: 1.6rem;
+    }
+    .who {
+        margin-left: -20%;
+        font-size: 2.7rem;
+        width: 116%;
+    }
+    .name {
+        font-size: 2.3rem;
+    }
+    .pro {
+        font-size: 1.4rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+        margin: 20px 30px 2px -30px;
+        width: 100%;
+    }
+    a.con-but h3 {
+        width: 67%;
+        margin-left: 15px;
+        margin-top: 10%;
+    }
+    img.mee {
+        margin-top: -140%;
+        left: -58%;
+        width: 130px;
+    }
+    #about p {
+        color: white;
+        width: 106%;
+        text-align: center;
+        margin-left: 37%;
+        margin-top: 59%;
+        padding: 10px;
+        font-size: 0.99rem;
+        background-color: rgba(15, 14, 14, 0.53);
+        border-radius: 19px;
+    }
+    footer.end {
+        width: 100%;
+        font-size: 1rem;
+        left: 0%;
+
+        margin-top: 14%;
+    }
+    .glass {
+        width: 300px;
+        height: 600px;
+        margin-top: 0%;
+    }
+
+    .feel {
+        margin-bottom: 38px;
+        font-size: 1.2rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1rem;
+    }
+
+    li.message {
+        margin-top: 30px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu input[type="password"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.99rem;
+    }
+
+    .user-menu textarea {
+        height: 150px;
+        resize: none;
+    }
+    .i {
+        margin-top: -14%;
+    }
+    i.fa-instagram {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 24px !important;
+        margin: 10px;
+    }
+
+    i.fa-facebook {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-x-twitter {
+        margin: 10px;
+        font-size: 28px !important;
+    }
+}
+@media (max-width: 376px) {
+    ul.bar {
+        display: none;
+    }
+    .h2 {
+        margin: 13px 0 10px -3px;
+        padding: 15px;
+        font-size: 1.4rem;
+    }
+    .who {
+        margin-left: -9%;
+        font-size: 2rem;
+        width: 106.7%;
+    }
+    .brand,
+    .logo {
+        font-size: 1.4rem;
+    }
+    .name {
+        font-size: 1.7rem;
+    }
+    .pro {
+        font-size: 1.2rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+        margin: 20px 30px 2px -20px;
+        width: 100%;
+    }
+    a.con-but h3 {
+        width: 67%;
+        font-size: 1.2rem;
+        margin-left: 18px;
+        margin-top: 10%;
+    }
+    img.mee {
+        margin-top: -105%;
+        left: -65%;
+        width: 110px;
+    }
+    #about p {
+        color: white;
+        width: 100%;
+        text-align: center;
+        margin-left: 30%;
+        margin-top: 59%;
+        padding: 10px;
+        font-size: 0.9rem;
+        background-color: rgba(15, 14, 14, 0.53);
+        border-radius: 19px;
+    }
+    footer.end {
+        width: 100%;
+        font-size: 1rem;
+        left: 0%;
+
+        margin-top: 14%;
+    }
+    .glass {
+        width: 300px;
+        height: 600px;
+        margin-top: 0%;
+    }
+
+    .feel {
+        margin-bottom: 38px;
+        font-size: 1.2rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1rem;
+    }
+
+    li.message {
+        margin-top: 30px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu input[type="password"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.99rem;
+    }
+
+    .user-menu textarea {
+        height: 150px;
+        resize: none;
+    }
+    .i {
+        margin-top: -14%;
+    }
+    i.fa-instagram {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 24px !important;
+        margin: 10px;
+    }
+
+    i.fa-facebook {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-x-twitter {
+        margin: 10px;
+        font-size: 28px !important;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media (max-width: 364px) {
+    ul.bar {
+        display: none;
+    }
+    .h2 {
+        margin: -3px 14px 10px -22px;
+        padding: 15px;
+    }
+    .who {
+        margin-left: -15%;
+        font-size: 2.7rem;
+        width: 90%;
+    }
+    .name {
+        font-size: 2.3rem;
+    }
+    .pro {
+        font-size: 1.4rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+        margin: 20px 30px 2px -20px;
+        width: 100%;
+    }
+
+    a.con-but h3 {
+        width: 67%;
+        margin-left: 25px;
+        margin-top: 10%;
+    }
+    img.mee {
+        margin-top: -140%;
+        left: -50%;
+        width: 130px;
+    }
+    #about p {
+        color: white;
+        width: 170%;
+        text-align: center;
+        left: 12%;
+        margin-top: 90%;
+        padding: 0;
+        font-size: 1rem;
+    }
+    footer.end {
+        width: 100%;
+        font-size: 1rem;
+        left: 0%;
+
+        margin-top: 14%;
+    }
+    .glass {
+        width: 300px;
+        height: 600px;
+        margin-top: 0%;
+    }
+
+    .feel {
+        margin-bottom: 38px;
+        font-size: 1.2rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 1rem;
+    }
+
+    li.message {
+        margin-top: 30px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu input[type="password"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.99rem;
+    }
+
+    .user-menu textarea {
+        height: 150px;
+        resize: none;
+    }
+    .i {
+        margin-top: -14%;
+    }
+    i.fa-instagram {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 24px !important;
+        margin: 10px;
+    }
+
+    i.fa-facebook {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-x-twitter {
+        margin: 10px;
+        font-size: 28px !important;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media only screen and (max-width: 360px) and (max-height: 740px) {
+    ul.bar {
+        display: none;
+    }
+    .h2 {
+        margin: 23px 0px 10px -3px;
+        padding: 15px;
+        width: 90%;
+    }
+    .par {
+        margin-top: 11%;
+    }
+    .brand,
+    .logo {
+        font-size: 1.6rem;
+    }
+    .who {
+        margin-left: -14%;
+        font-size: 2.4rem;
+        width: 109%;
+    }
+    .name {
+        font-size: 2rem;
+    }
+    .pro {
+        font-size: 1.2rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+        margin: 20px 0px 2px -29px;
+        width: 104%;
+    }
+    a.con-but h3 {
+        width: 67%;
+        margin-left: 14px;
+        margin-top: 10%;
+        font-size: 1.1rem;
+    }
+    img.mee {
+        margin-top: -129%;
+        left: -57%;
+        width: 130px;
+    }
+    #about p {
+        color: white;
+        width: 110%;
+        text-align: center;
+        left: 12%;
+        margin-top: 90%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    footer.end {
+        width: 100%;
+        font-size: 1rem;
+        left: 0%;
+        margin-top: 14%;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media only screen and (max-width: 361px) and (max-height: 670px) {
+    .h2 {
+        margin-top: -29px;
+    }
+    #about p {
+        margin-top: 90%;
+        font-size: 0.98rem;
+    }
+}
+@media only screen and (max-width: 360px) and (max-height: 640px) {
+    .h2 {
+        margin-top: -10%;
+    }
+    #about p {
+        width: 118%;
+        font-size: 0.99rem;
+        margin-top: 88%;
+    }
+    img.mee {
+        margin-top: -120%;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}
+@media only screen and (max-width: 344px) and (max-height: 882px) {
+    #contact {
+        height: 90vh;
+    }
+    ul.bar {
+        display: none;
+    }
+    .par {
+        margin-top: 60%;
+        transform: translateX(-35px);
+    }
+    .h2 {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        font-size: 7.2vw !important;
+        line-height: 1.2 !important;
+        letter-spacing: normal !important;
+        word-spacing: normal !important;
+        overflow: visible !important;
+    }
+
+    .brand,
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .who {
+        margin-left: 0% !important;
+        font-size: 1.8rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .name {
+        font-size: 1.7rem;
+    }
+
+    .pro {
+        font-size: 1.3rem !important;
+        font-family: "Merriweather";
+        font-weight: 100;
+        margin: 15px auto !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    a.con-but h3 {
+        width: 60% !important;
+        margin: 20px auto 0 50px !important;
+        padding: 10px;
+        font-size: 1rem !important;
+        text-align: center !important;
+    }
+
+    img.mee {
+        transform: translateX(-90px) translateY(30px);
+        width: 70px !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    h1.About {
+        color: white;
+        font-size: 1.2rem;
+        position: absolute;
+        font-family: "BBH Sans Hegarty";
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-align: center;
+        transform: translateX(-10px) translateY(89px);
+        word-spacing: 7px;
+    }
+
+    #about p {
+        color: white;
+        width: 70% !important;
+        transform: translateX(-44px) translateY(-80px);
+        text-align: left;
+        padding: 10px;
+        line-height: 1.7;
+        font-size: 0.9rem;
+        box-sizing: border-box !important;
+    }
+
+    .glass {
+        position: absolute;
+        width: calc(100% - 32px);
+        margin-top: 45%;
+        transform: translateX(16px);
+        max-width: 420px;
+        height: 70%;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        bottom: 0;
+        box-sizing: border-box;
+        top: 0;
+    }
+    .feel {
+        position: absolute;
+        margin-top: -80%;
+    }
+    .portfolio-btn {
+        position: absolute;
+        width: 55%;
+        transform: translateX(0) translateY(130px);
+        padding: 12px 25px;
+        background: rgba(255, 255, 255, 0.21);
+        border: 1px solid rgba(143, 139, 237, 0.3);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 5px !important;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 15px rgba(143, 139, 237, 0.1);
+    }
+
+    span.Check {
+        font-size: 10px;
+        text-align: center;
+    }
+    i.fa-solid {
+        font-size: smaller;
+    }
+    .modal-overlay {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 385px;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 30px 15px;
+        border-radius: 16px;
+        box-sizing: border-box;
+        scrollbar-width: none;
+    }
+    .modal-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .close-btn {
+        top: 12px;
+        right: 18px;
+        font-size: 24px;
+    }
+
+    .modal-header {
+        margin-bottom: 20px;
+    }
+
+    .tech-icons-header {
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .tech-icons-header i {
+        font-size: 1.8rem;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 90%;
+        padding: 5px 0;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 230px;
+        border-radius: 12px;
+    }
+
+    .project-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .project-card:active {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+    }
+
+    .project-img {
+        height: 120px;
+    }
+}
+@media (max-width: 321px) {
+    ul.bar {
+        display: none;
+    }
+    .brand,
+    .logo {
+        font-size: 1.11rem;
+    }
+    .h2 {
+        margin: -60px 14px 10px -7px;
+        padding: 15px;
+        width: 90%;
+        font-size: 1.3rem;
+    }
+    .who {
+        margin-left: -4.6%;
+        font-size: 1.7rem;
+        width: 100%;
+    }
+    .name {
+        font-size: 1.5rem;
+    }
+    .pro {
+        font-size: 1.1rem;
+        margin: 20px 0 2px -20px;
+        width: 100%;
+    }
+    a.con-but h3 {
+        width: 57%;
+        font-size: 0.8rem;
+        margin-left: 25px;
+        margin-top: 10%;
+    }
+    img.mee {
+        margin-top: -90%;
+        left: -60%;
+        width: 100px;
+    }
+    #about p {
+        color: white;
+        width: 100%;
+        text-align: center;
+        margin-left: 45%;
+        margin-top: 90%;
+        padding: 20px;
+        font-size: 0.666666rem;
+        background-color: rgba(15, 14, 14, 0.53);
+        border-radius: 19px;
+    }
+    footer.end {
+        display: none;
+    }
+    #contact {
+        height: 140vh;
+    }
+    .glass {
+        width: 280px;
+        height: 600px;
+        margin-top: -9%;
+    }
+
+    .feel {
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+        font-family: "Merriweather";
+        font-weight: 100;
+    }
+
+    .user-menu li span {
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.9rem;
+    }
+
+    li.message {
+        margin-top: 30px;
+    }
+
+    .user-menu input[type="text"],
+    .user-menu input[type="email"],
+    .user-menu select,
+    .user-menu textarea {
+        width: 100%;
+        padding: 9px 3px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.8rem;
+    }
+    .user-menu input[type="text"],
+    .user-menu select {
+        width: 150%;
+        padding: 9px 3px;
+        margin: 9px 3px 0 -24px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgb(143, 139, 237);
+        font-family: "Merriweather";
+        font-weight: 100;
+        font-size: 0.8rem;
+    }
+
+    .user-menu textarea {
+        height: 100px;
+        resize: none;
+    }
+    .i {
+        margin-top: -14%;
+    }
+    i.fa-instagram {
+        margin: 0;
+        font-size: 24px !important;
+    }
+
+    i.fa-tiktok {
+        font-size: 24px !important;
+        margin: 10px;
+    }
+
+    i.fa-facebook {
+        margin: 10px;
+        font-size: 24px !important;
+    }
+
+    i.fa-x-twitter {
+        margin: 10px;
+        font-size: 22px !important;
+    }
+    .glass {
+        width: 420px; /* صغرنا العرض من 500 */
+        height: auto; /* خليه يلم على قد المحتوى بدل 550px */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    .modal-content {
+        margin: 0 !important;
+        transform: translate(0, 0) !important;
+        width: 90%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: #8f8bed;
+    }
+
+    /* الهيدر والأيقونات النيون */
+    .modal-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .tech-icons-header {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+    .tech-icons-header i {
+        font-size: 2.2rem;
+        transition: 0.3s;
+    }
+
+    .html-icon {
+        color: #e34f26;
+        filter: drop-shadow(0 0 8px rgba(227, 79, 38, 0.6));
+    }
+    .css-icon {
+        color: #1572b6;
+        filter: drop-shadow(0 0 8px rgba(21, 114, 182, 0.6));
+    }
+    .js-icon {
+        color: #f7df1e;
+        filter: drop-shadow(0 0 8px rgba(247, 223, 30, 0.6));
+    }
+
+    .tech-icons-header i:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    /* شبكة المشاريع (الآن تدعم 3 عناصر) */
+    .projects-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+        flex-wrap: wrap; /* لضمان التوافق مع الشاشات الصغيرة */
+    }
+
+    /* تنسيق الكارد الموحد */
+    .project-card {
+        width: 280px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(143, 139, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-img {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #1a1a1a;
+    }
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img img {
+        transform: scale(1.1);
+    }
+
+    .project-info {
+        padding: 15px;
+        text-align: center;
+    }
+    .project-info h4 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .project-info p {
+        color: #aaa;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* أيقونة الزووم */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2;
+    }
+}

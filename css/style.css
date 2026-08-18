@@ -1,0 +1,1554 @@
+/* ==========================================================================
+   PART 1: VARIABLES, RESET, FIXED KINETIC TYPOGRAPHY & CINEMATIC INTRO
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --bg-obsidian: #040405; /* أسود ملكي فخم وعميق جداً لراحة العين */
+    --accent-gold-bright: #d9b88c; /* ذهبي مضيء عالي التباين لتسهيل الرؤية */
+    --text-pure-white: #ffffff; /* أبيض ناصع بأعلى درجات الوضوح للنصوص */
+    --text-slate-light: #94a3b8; /* رمادي منير وواضح جداً للفقرات */
+    --surface-card-dark: #0d0d11; /* لون الصناديق لتظهر بارزة فوق الأسود العميق */
+    --border-glow: rgba(217, 184, 140, 0.2); /* إضاءة ناعمة للحواف لراحة العين */
+
+    /* 🌟 تعيين المتغيرات للخطوط المحدثة الجديدة بدقة */
+    --font-serif-display: "Bebas Neue", sans-serif;
+    --font-sans-ui: "Roboto Condensed", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-obsidian);
+    color: var(--text-pure-white);
+    font-family: var(--font-sans-ui);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 🟥 محرك خطوط الأنيميشن الهندسي (Kinetic Typography Engine) */
+.portfolio-canvas.kinetic-type-engine {
+    flex: 0.8;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+}
+
+.kinetic-word-wrapper {
+    display: flex;
+    align-items: baseline; /* يضمن محاذاة القواعد السفلية للحروف بالكامل */
+    gap: 8px; /* مسافة هندسية ضيقة وعصرية ومتناسبة مع الخط الجديد */
+}
+
+/* الخصائص الأساسية لكل حرف */
+.kinetic-letter {
+    font-family: var(--font-serif-display);
+    text-transform: uppercase;
+    display: inline-block;
+    opacity: 0; /* تبدأ مخفية ويتحكم الأنيميشن في إظهارها وتثبيتها */
+    will-change: transform, opacity, filter;
+    letter-spacing: 1px;
+}
+
+/* 🟥 حرف الـ P القيادي - حجم ضخم ولون أحمر فقع متوهج ثابت الرؤية */
+body.loaded .kinetic-letter.focal-crimson {
+    font-size: clamp(5.5rem, 10vw, 9rem); /* زيادة الحجم لتناسب طبيعة خط Bebas Neue */
+    color: #ff0033; /* أحمر نيون فقع مشبع تماماً لإبراز التباين */
+    font-weight: 800;
+    text-shadow: 0 0 30px rgba(255, 0, 51, 0.5); /* توهج حاد يحل مشكلة الرؤية */
+
+    /* تفعيل أنيميشن السقوط الحر الفيزيائي مع إجبار التثبيت في الفريم الأخير */
+    animation: crimsonDrop 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+}
+
+/* ⬜ بقية الحروف التابعة - لون أبيض ناصع متناسق وثابت الرؤية */
+body.loaded .kinetic-letter.trailing-char {
+    font-size: clamp(3.5rem, 7vw, 6rem); /* حجم متناسق هندسياً مع الحرف الأول */
+    color: var(--text-pure-white);
+    font-weight: 400;
+
+    /* تفعيل أنيميشن الاندفاع السريع مع إجبار التثبيت في الفريم الأخير */
+    animation: whiteReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+/* ⏱️ تأثير تأخير التوقيت الدقيق بالملي ثانية بعد فتح الستارة مباشرة */
+body.loaded .kinetic-letter:nth-child(2) {
+    animation-delay: 0.5s !important;
+}
+body.loaded .kinetic-letter:nth-child(3) {
+    animation-delay: 0.58s !important;
+}
+body.loaded .kinetic-letter:nth-child(4) {
+    animation-delay: 0.66s !important;
+}
+body.loaded .kinetic-letter:nth-child(5) {
+    animation-delay: 0.74s !important;
+}
+body.loaded .kinetic-letter:nth-child(6) {
+    animation-delay: 0.82s !important;
+}
+body.loaded .kinetic-letter:nth-child(7) {
+    animation-delay: 0.9s !important;
+}
+body.loaded .kinetic-letter:nth-child(8) {
+    animation-delay: 0.98s !important;
+}
+body.loaded .kinetic-letter:nth-child(9) {
+    animation-delay: 1.06s !important;
+}
+
+/* ==========================================================================
+   ANIMATION KEYFRAMES (حسابات الجاذبية والارتداد مع إجبار البقاء)
+   ========================================================================== */
+@keyframes crimsonDrop {
+    0% {
+        transform: translateY(-250px) scaleY(1.4);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    85% {
+        transform: translateY(15px) scaleY(0.85);
+    } /* تأثير الارتطام المطاطي بالأرض */
+    100% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1 !important; /* تثبيت الحرف ظاهراً بنسبة 100% ومنع اختفائه */
+    }
+}
+
+@keyframes whiteReveal {
+    0% {
+        transform: translateY(60px) scale(0.9);
+        filter: blur(6px); /* ضبابية حركية سينمائية للسرعة والفوكس */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        opacity: 1 !important; /* تثبيت الحروف ظاهرة بنسبة 100% ومنع اختفائها */
+    }
+}
+
+/* شاشة الانترو والستائر المسرحية عند التحميل الأول */
+#intro-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.intro-curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #020203;
+    transition: transform 1.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.left-curtain {
+    left: 0;
+}
+.right-curtain {
+    right: 0;
+}
+
+#intro-loader.stage-close {
+    display: flex !important;
+}
+#intro-loader.stage-close .left-curtain {
+    transform: translateX(0) !important;
+}
+#intro-loader.stage-close .right-curtain {
+    transform: translateX(0) !important;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+.intro-title {
+    font-family: var(--font-serif-display);
+    font-size: clamp(3rem, 8vw, 6.5rem); /* تعديل المقاس ليتناسب مع الخط المندمج الجديد */
+    letter-spacing: 6px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.intro-subtitle {
+    font-family: var(--font-sans-ui);
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: var(--accent-gold-bright);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.intro-counter {
+    font-family: var(--font-serif-display);
+    font-size: 34px;
+    color: #666;
+}
+
+#intro-loader.fade-out .intro-content {
+    opacity: 0;
+}
+#intro-loader.split .left-curtain {
+    transform: translateX(-100%);
+}
+#intro-loader.split .right-curtain {
+    transform: translateX(100%);
+}
+
+main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.loaded main {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ==========================================================================
+   PART 2: NAVBAR, HERO WRAPPER (WITH INTEGRATED LOTTIE OVERRIDES) & IDENTITY
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(4, 4, 5, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    z-index: 1000;
+}
+
+.brand {
+    font-family: var(--font-serif-display);
+    font-size: 32px; /* زيادة حجم اللوجو ليتماشى مع Bebas Neue */
+    letter-spacing: 2px;
+    color: var(--text-pure-white);
+    line-height: 1;
+}
+.brand .logo-dot {
+    color: var(--accent-gold-bright);
+    text-shadow: 0 0 10px var(--accent-gold-bright);
+}
+
+.bar {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: var(--text-slate-light);
+    font-size: 14px; /* مقاس الخط الجديد */
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: color 0.4s ease;
+}
+.navbar-link:hover,
+.navbar-link.active {
+    color: var(--text-pure-white);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.section {
+    min-height: 100vh;
+    padding: 140px 8% 10px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    width: 100%;
+}
+
+.par {
+    flex: 1.2;
+    max-width: 650px;
+}
+
+.par h2 {
+    font-size: 14px;
+    color: var(--accent-gold-bright);
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(219, 184, 140, 0.2);
+}
+
+.who {
+    font-family: var(--font-serif-display);
+    font-size: clamp(3.5rem, 7vw, 6rem); /* مقاس خط عنوان الهيروو المناسب للخط الجديد */
+    line-height: 1;
+    color: var(--text-pure-white);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.pro {
+    font-size: 16px;
+    color: var(--text-slate-light);
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.con-but {
+    display: inline-flex;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid var(--accent-gold-bright);
+    padding: 20px 55px;
+    color: var(--accent-gold-bright);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(219, 184, 140, 0.05);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.con-but:hover {
+    background-color: var(--accent-gold-bright);
+    color: var(--bg-obsidian);
+    box-shadow: 0 0 25px rgba(219, 184, 140, 0.3);
+    transform: translateY(-4px);
+}
+
+/* 🌟 إدراج ودمج تعديلاتك الذهبية لأنيميشن الـ Lottie بدقة بالغة */
+.robot-canvas,
+.website-canvas {
+    flex: 0.8;
+    width: 100%;
+    height: 500px;
+    transform: translateX(130px) translateY(-70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lottie-character {
+    width: 440px; /* المقاس المتناسق الفاخر لعرض الأنيميشن بدقة */
+    height: 440px;
+    filter: drop-shadow(0 0 30px rgba(210, 210, 210, 0.15)); /* إضاءة خلفية تبرز ملامح بدقة فوق الأسود */
+    transition: transform 0.5s ease;
+}
+
+.lottie-character:hover {
+    transform: scale(1.03);
+}
+
+/* قسم نبذة عني الهوية الشخصية */
+.section-tag {
+    font-size: 13px;
+    color: var(--accent-gold-bright);
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.about-header .About {
+    font-family: var(--font-serif-display);
+    font-size: 52px; /* زيادة مقاس العناوين لتظهر بجمال خط الـ Bebas Neue */
+    color: var(--text-pure-white);
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 80px;
+    margin-bottom: 60px;
+}
+
+.about-content p {
+    flex: 1.4;
+    font-size: 17px;
+    line-height: 2;
+    color: var(--text-slate-light);
+    font-weight: 300;
+}
+/* ==========================================================================
+   PART 2 ADDITION: INTEGRATED CERTIFICATE UNDER TEXT LAYOUT
+   ========================================================================== */
+.about-text-column {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* مسافة هندسية مريحة بين الفقرة والشهادة بالأسفل */
+}
+
+.certificate-preview-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-self: flex-start; /* يمنع الشهادة من التمدد العشوائي ويحافظ على أبعادها */
+}
+
+.cert-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-gold-bright);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* هندسة إطار الشهادة المصغر تحت النص */
+.cert-frame {
+    position: relative;
+    width: 140px; /* حجم مصغر ومحايد جداً وأنيق يتناسب مع تصميم المجلات */
+    height: 190px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.cert-hover-overlay i {
+    font-size: 24px; /* مقاس حاد وممتاز للرؤية البصرية */
+    color: var(--accent-gold-bright);
+    text-shadow: 0 0 10px rgba(219, 184, 140, 0.4); /* توهج ذهبي خفيف جداً يليق بالتصميم الفاخر */
+}
+
+.cert-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) contrast(1.05);
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+/* غطاء التفاعل والعدسة عند حرك الماوس فوق الشهادة */
+.cert-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 4, 5, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cert-hover-overlay i {
+    font-size: 22px;
+    color: var(--accent-gold-bright);
+}
+
+.cert-frame:hover img {
+    transform: scale(1.04);
+    filter: brightness(1) contrast(1.1);
+}
+
+.cert-frame:hover .cert-hover-overlay {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   PART 3 ADDITION: CINEMATIC CERTIFICATE LIGHTBOX OVERLAY
+   ========================================================================== */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(2, 2, 3, 0.96); /* عتمة حالكة فاخرة تبرز الألوان والبيانات الحادة للشهادة */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 10001;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.lightbox-scaled-image {
+    max-width: 85%;
+    max-height: 85vh;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-overlay.show-lightbox .lightbox-scaled-image {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 45px;
+    color: var(--text-slate-light);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.lightbox-close:hover {
+    color: #ff0033;
+}
+
+.mee-container {
+    flex: 0.6;
+    overflow: hidden;
+    transform: translateY(-70px);
+    border: 1px solid var(--accent-gold-bright);
+    box-shadow: 0 0 20px rgba(219, 184, 140, 0.15);
+}
+
+.mee {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%);
+}
+/* ==========================================================================
+   PART 3: SKILLS SHELF, THEATRICAL BUTTON, DIALOGUE, RESPONSIVE & CHROMATIC CARDS
+   ========================================================================== */
+.theatrical-action-zone {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* توزيع مسافة هندسية مريحة تفصل بين الكبسولات والزر */
+}
+
+/* رف المهارات البسيط التجريدي */
+.skills-minimal-shelf {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 550px;
+}
+
+.skill-pill-item {
+    flex: 1;
+    min-width: 120px;
+    background: var(--surface-card-dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-pill-item i {
+    font-size: 20px;
+    color: var(--text-slate-light);
+    transition:
+        transform 0.3s,
+        color 0.3s;
+}
+.skill-pill-item span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-slate-light);
+    transition: color 0.3s;
+}
+.skill-pill-item:hover i {
+    transform: scale(1.1);
+}
+
+/* تأثيرات التحويم الملوّنة بدقة للكبسولات فوق الأسود الملكي لراحة الرؤية */
+.html-pill:hover {
+    border-color: #e34f26;
+    box-shadow: 0 10px 25px rgba(227, 79, 38, 0.1);
+}
+.html-pill:hover i,
+.html-pill:hover span {
+    color: #e34f26;
+}
+
+.css-pill:hover {
+    border-color: #1572b6;
+    box-shadow: 0 10px 25px rgba(21, 114, 182, 0.1);
+}
+.css-pill:hover i,
+.css-pill:hover span {
+    color: #1572b6;
+}
+
+.js-pill:hover {
+    border-color: #f7df1e;
+    box-shadow: 0 10px 25px rgba(247, 223, 30, 0.08);
+}
+.js-pill:hover i,
+.js-pill:hover span {
+    color: #f7df1e;
+}
+
+.json-pill:hover {
+    border-color: var(--accent-gold-bright);
+    box-shadow: 0 10px 25px rgba(219, 184, 140, 0.1);
+}
+.json-pill:hover i,
+.json-pill:hover span {
+    color: var(--accent-gold-bright);
+}
+
+/* هندسة وتصميم زر الانتقال المسرحي */
+.stage-transition-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 550px;
+    background: var(--surface-card-dark);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 25px 40px;
+    text-decoration: none;
+    color: var(--text-pure-white);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+.stage-transition-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(219, 184, 140, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+.stage-transition-btn:hover::before {
+    left: 100%;
+}
+.stage-transition-btn:hover {
+    border-color: var(--accent-gold-bright);
+    box-shadow: 0 0 30px rgba(219, 184, 140, 0.15);
+    transform: scale(1.02);
+}
+.stage-transition-btn .btn-text {
+    font-family: var(--font-serif-display);
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+.stage-transition-btn .btn-arrow {
+    font-size: 18px;
+    color: var(--accent-gold-bright);
+    transition: transform 0.4s ease;
+}
+.stage-transition-btn:hover .btn-arrow {
+    transform: translateX(10px);
+}
+
+.end {
+    margin-top: 60px;
+    font-size: 14px;
+    color: var(--text-slate-light);
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+/* 🌟 شبكة كروت المعرض الفريدة الملوّنة (Chromatic Styling For portfolio.html) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+.project-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.project-img {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    background: #000;
+}
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: all 0.6s;
+}
+.project-card:hover .project-img img {
+    transform: scale(1.03);
+    opacity: 1;
+}
+.project-info {
+    padding: 35px;
+}
+.project-info h4 {
+    font-family: var(--font-serif-display);
+    font-size: 26px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+.project-info p {
+    font-size: 14px;
+    line-height: 1.7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 300;
+}
+.project-info p i {
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+.project-card:hover .project-info p i {
+    transform: translate(3px, -3px);
+}
+
+/* كتل التلوين الكروماتية الفاخرة لكل كارت من مشاريعك الحقيقية */
+.plants-style {
+    background: #071a12;
+    border-color: rgba(46, 117, 89, 0.2);
+}
+.plants-style h4 {
+    color: #52c498;
+}
+.plants-style p {
+    color: #a3d9c3;
+}
+.plants-style:hover {
+    box-shadow: 0 20px 40px rgba(82, 196, 152, 0.15);
+    border-color: #52c498;
+}
+.certificate-style {
+    background: #1c140a;
+    border-color: rgba(162, 131, 92, 0.2);
+}
+.certificate-style h4 {
+    color: #d9b88c;
+}
+.certificate-style p {
+    color: #ebd8bf;
+}
+.certificate-style:hover {
+    box-shadow: 0 20px 40px rgba(217, 184, 140, 0.15);
+    border-color: #d9b88c;
+}
+.mp3-style {
+    background: #131417;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+.mp3-style h4 {
+    color: #cbd5e1;
+}
+.mp3-style p {
+    color: #94a3b8;
+}
+.mp3-style:hover {
+    box-shadow: 0 20px 40px rgba(148, 163, 184, 0.15);
+    border-color: #cbd5e1;
+}
+.football-style {
+    background: #071924;
+    border-color: rgba(14, 165, 233, 0.2);
+}
+.football-style h4 {
+    color: #38bdf8;
+}
+.football-style p {
+    color: #bae6fd;
+}
+.football-style:hover {
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+    border-color: #38bdf8;
+}
+.nostalgia-style {
+    background: #1c0d16;
+    border-color: rgba(236, 72, 153, 0.2);
+}
+.nostalgia-style h4 {
+    color: #f472b6;
+}
+.nostalgia-style p {
+    color: #fbcfe8;
+}
+.nostalgia-style:hover {
+    box-shadow: 0 20px 40px rgba(244, 114, 182, 0.15);
+    border-color: #f472b6;
+}
+.asian-style {
+    background: #1c0f0d;
+    border-color: rgba(249, 115, 22, 0.2);
+}
+.asian-style h4 {
+    color: #fb923c;
+}
+.asian-style p {
+    color: #ffedd5;
+}
+.asian-style:hover {
+    box-shadow: 0 20px 40px rgba(251, 146, 60, 0.15);
+    border-color: #fb923c;
+}
+.venus-style {
+    background: #0f0a1c;
+    border-color: rgba(139, 92, 246, 0.2);
+}
+.venus-style h4 {
+    color: #a78bfa;
+}
+.venus-style p {
+    color: #ede9fe;
+}
+.venus-style:hover {
+    box-shadow: 0 20px 40px rgba(167, 139, 250, 0.15);
+    border-color: #a78bfa;
+}
+
+/* قسم استوديو الاتصال وحوار الفورم البارز للغاية */
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    width: 100%;
+}
+.contact-info-panel {
+    flex: 1;
+    max-width: 450px;
+}
+.feel {
+    font-family: var(--font-serif-display);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1;
+    color: var(--text-pure-white);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+.contact-desc {
+    font-size: 15px;
+    color: var(--text-slate-light);
+    line-height: 1.8;
+    font-weight: 300;
+}
+.glass-form-container {
+    flex: 1.2;
+    max-width: 650px;
+    background: var(--surface-card-dark);
+    padding: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+.form-group label {
+    font-size: 12px;
+    color: var(--accent-gold-bright);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.form-input {
+    font-family: var(--font-sans-ui);
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0px;
+    color: var(--text-pure-white);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.4s ease;
+    font-weight: 300;
+}
+.form-input:focus {
+    border-color: var(--accent-gold-bright);
+}
+textarea.form-input {
+    height: 100px;
+    resize: none;
+}
+select.form-input option {
+    background: #0f0f14;
+    color: #fff;
+}
+#sendBtn {
+    font-family: var(--font-sans-ui);
+    width: 100%;
+    background: var(--text-pure-white);
+    color: var(--bg-obsidian);
+    border: none;
+    padding: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-bottom: 40px;
+}
+#sendBtn:hover:not(:disabled) {
+    background: var(--accent-gold-bright);
+    color: var(--bg-obsidian);
+}
+#sendBtn:disabled {
+    background: #1e1e24;
+    color: #555;
+    cursor: not-allowed;
+}
+
+/* التنبيه المنبثق المخصص والروابط */
+.custom-alert-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+.custom-alert-content {
+    background: var(--surface-card-dark);
+    padding: 40px;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.custom-alert-content h3 {
+    font-family: var(--font-serif-display);
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+#closeAlertBtn {
+    font-family: var(--font-sans-ui);
+    padding: 12px 35px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   HIGH-CONTRAST CENTERING & UPSCALE FOR SOCIAL LINKS ROW (DESKTOP)
+   ========================================================================== */
+.social-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 45px; /* مسافة هندسية مريحة ومتناسقة بين الأيقونات */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 35px;
+    margin-top: 10px;
+
+    /* 🌟 التعديل السحري: توسيط الأيقونات بالكامل في منتصف الصندوق للكمبيوتر */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.social-links-row a {
+    color: var(--text-slate-light);
+    font-family: var(--font-sans-ui); /* خط Roboto Condensed الواضح */
+    font-size: 15px; /* 🌟 تكبير مقاس الخط ليكون واضحاً وبارزاً للرؤية */
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 2.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* مسافة واضحة تفصل اللوجو عن اسم الشبكة */
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* 🌟 تكبير الأيقونات نفسها (FontAwesome Icons) بشكل مستقل */
+.social-links-row a i {
+    font-size: 20px; /* 🌟 مقاس كبير وحاد وواضح جداً للقراءة وبأعلى تباين */
+    transition: transform 0.3s ease;
+}
+
+/* حركة التفاعل والتحويم المتوهجة الراقية فوق الأسود الملكي */
+.social-links-row a:hover {
+    color: var(--accent-gold-bright); /* يضيء بالذهبي عالي التباين عند مرور الماوس */
+    transform: translateY(-3px); /* حركة صعود خفيفة وممتعة بصرياً */
+}
+
+.social-links-row a:hover i {
+    transform: scale(1.15); /* تضخيم الأيقونة بشكل تفاعلي ذكي */
+}
+/* ==========================================================================
+   COMPLETE UNIVERSAL RESPONSIVE MODULE (CHOSEN MAX-WIDTH: 1030PX)
+   ========================================================================== */
+
+/* 📱 1. الشاشات المتوسطة والأجهزة اللوحية (Max-Width: 1030px) */
+@media (max-width: 1030px) {
+    .navbar {
+        padding: 30px 5% !important;
+        background: var(--bg-obsidian) !important;
+    }
+
+    .bar {
+        gap: 35px !important;
+    }
+
+    .hero-wrapper,
+    .contact-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 60px !important;
+    }
+
+    /* حظر وإلغاء أي إزاحة جانبية للـ Lottie وتوسيطه كلياً للشاشات المتوسطة والموبايل */
+    .robot-canvas,
+    .website-canvas {
+        height: 420px !important;
+        max-width: 420px !important;
+        margin: 0 auto !important;
+        transform: none !important;
+        flex: unset !important;
+        width: 100% !important;
+    }
+
+    .lottie-character {
+        width: 350px !important;
+        height: 350px !important;
+    }
+
+    .par,
+    .contact-info-panel,
+    .glass-form-container {
+        max-width: 100% !important;
+    }
+
+    .about-content {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 50px !important;
+    }
+
+    .about-text-column {
+        align-items: center !important;
+    }
+
+    .certificate-preview-container {
+        align-self: center !important;
+        align-items: center !important;
+    }
+
+    .mee-container {
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 🌟 تأمين التوسيط المطلق والتكبير لأيقونات التواصل الاجتماعي لشاشات الـ 1030 واقل ومنع انحيازها لليسار */
+    .social-links-row {
+        justify-content: center !important;
+        gap: 20px 40px !important;
+        width: 100% !important;
+    }
+
+    .social-links-row a {
+        font-size: 15px !important;
+    }
+
+    .social-links-row a i {
+        font-size: 20px !important;
+    }
+
+    .glass-form-container {
+        padding: 40px 30px !important;
+    }
+
+    .stage-transition-btn {
+        max-width: 100% !important;
+        padding: 20px 30px !important;
+    }
+
+    .skills-minimal-shelf {
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* تعديل كروت صفحة المعرض الثانية لشاشات الـ 1030 واقل */
+    .portfolio-studio-header {
+        text-align: center !important;
+        margin: 0 auto 50px auto !important;
+    }
+
+    .portfolio-studio-section {
+        padding-top: 180px !important;
+    }
+}
+/* ==========================================================================
+   EXCLUSIVE TRANSITION VIEWPORT MODULE (FROM 542PX TO 1030PX ONLY)
+   ========================================================================== */
+@media screen and (min-width: 542px) and (max-width: 1030px) {
+    .navbar {
+        padding: 30px 5% !important;
+        background: var(--bg-obsidian) !important;
+    }
+
+    .bar {
+        gap: 35px !important;
+    }
+
+    /* 🌟 Hero Re-ordering: Centers the Lottie animation right above the text stack */
+    .hero-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 25px !important;
+    }
+
+    .par {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        max-width: 100% !important;
+    }
+
+    .par h2 {
+        font-size: 14px !important;
+        letter-spacing: 4px !important;
+        margin-bottom: 15px !important;
+        order: 1 !important; /* Tiny top intro */
+    }
+
+    /* 🌟 Robot Canvas: Centered perfectly right below h2 and before who/pro blocks */
+    .robot-canvas,
+    .website-canvas {
+        display: none;
+    }
+
+    .lottie-character {
+        width: 350px !important;
+        height: 350px !important;
+    }
+
+    .who {
+        font-size: clamp(2.8rem, 6vw, 4.2rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 20px !important;
+        order: 3 !important;
+    }
+
+    .pro {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        margin-bottom: 35px !important;
+        order: 4 !important;
+    }
+
+    .home-action {
+        order: 5 !important;
+    }
+
+    /* 🌟 About Layout: Downsizes the profile portrait by 35% while keeping it cleanly locked on the side row */
+    .about-content {
+        display: flex !important;
+        flex-direction: row !important; /* Enforces clean horizontal mag-style alignment */
+        align-items: center !important;
+        text-align: left !important;
+        gap: 40px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        padding-bottom: 60px !important;
+    }
+
+    .about-text-column {
+        flex: 1.5 !important;
+        align-items: flex-start !important;
+    }
+
+    .about-content p {
+        text-align: left !important;
+    }
+
+    .certificate-preview-container {
+        align-self: flex-start !important;
+        align-items: flex-start !important;
+    }
+
+    /* Downsized portrait footprint to keep optimal tracking rhythm next to text block */
+    .mee-container {
+        flex: 0.5 !important;
+        max-width: 180px !important;
+        margin: 0 !important;
+    }
+
+    /* Social Panel Alignment over the dark canvas */
+    .social-links-row {
+        justify-content: center !important;
+        gap: 20px 40px !important;
+        width: 100% !important;
+    }
+
+    .social-links-row a {
+        font-size: 15px !important;
+    }
+
+    .social-links-row a i {
+        font-size: 20px !important;
+    }
+
+    .glass-form-container {
+        padding: 40px 30px !important;
+    }
+
+    .stage-transition-btn {
+        max-width: 100% !important;
+        padding: 20px 30px !important;
+    }
+
+    .skills-minimal-shelf {
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* Secondary gallery exhibition space rules */
+    .portfolio-studio-header {
+        text-align: center !important;
+        margin: 0 auto 50px auto !important;
+    }
+
+    .portfolio-studio-section {
+        padding-top: 180px !important;
+    }
+}
+
+/* ==========================================================================
+   THE COMPLETE COMPREHENSIVE RESPONSIVE MODULE FOR 541PX AND BELOW
+   ========================================================================== */
+@media (max-width: 541px) {
+    /* 🏢 1. التجهيزات العامة وشريط التنقل (Universal & Navbar) */
+    .navbar {
+        padding: 20px 6% !important;
+        background: var(--bg-obsidian) !important;
+    }
+
+    .bar {
+        gap: 15px !important;
+        display: none;
+    }
+
+    .navbar-link {
+        font-size: 11px !important;
+        letter-spacing: 1px !important;
+    }
+    .robot-canvas {
+        display: none;
+    }
+    .section {
+        padding: 30px 6% 1px 6% !important; /* تقليص الهوامش الجانبية لمنح مساحة أكبر للعناصر */
+    }
+
+    /* 🟥 2. محرك الخطوط الحركي وكلمة Portfolio (Kinetic Typography) */
+    .kinetic-word-wrapper {
+        gap: 3px !important; /* تضييق المسافة هندسياً لمنع انكسار الكلمة الحركية لسطرين */
+    }
+
+    body.loaded .kinetic-letter.focal-crimson {
+        font-size: clamp(3.2rem, 11vw, 4.5rem) !important; /* حجم مطاطي دقيق يتكيف مع عرض الشاشة */
+        text-shadow: 0 0 15px rgba(255, 0, 51, 0.4) !important;
+    }
+
+    body.loaded .kinetic-letter.trailing-char {
+        font-size: clamp(2rem, 7.5vw, 2.9rem) !important;
+        letter-spacing: -1px !important;
+    }
+
+    /* 🎬 3. شاشة الإنترو / الستائر المسرحية (Cinematic Intro Loader) */
+    .intro-title {
+        font-size: clamp(2rem, 12vw, 3.8rem) !important;
+        letter-spacing: 4px !important;
+    }
+
+    .intro-subtitle {
+        font-size: 10px !important;
+        letter-spacing: 4px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .intro-counter {
+        font-size: 24px !important;
+    }
+
+    /* 🕹️ 4. قسم الترحيب وأنيميشن اللوتي (Hero Section & Lottie) */
+    .hero-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 30px !important;
+    }
+
+    .par {
+        max-width: 100% !important;
+    }
+
+    .par h2 {
+        font-size: 12px !important;
+        letter-spacing: 3px !important;
+        margin-bottom: 15px !important;
+    }
+    .certificate-preview-container {
+        align-self: center !important; /* توسيط الشهادة في منتصف شاشة الموبايل تلقائياً */
+        align-items: center !important;
+        margin-top: 10px !important;
+    }
+    .cert-frame {
+        width: 240px !important; /* مقاس أعرض قليلاً ومناسب جداً للموبايل */
+        height: 165px !important;
+    }
+
+    .who {
+        font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .pro {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 35px !important;
+    }
+
+    .con-but {
+        padding: 16px 40px !important;
+        font-size: 11px !important;
+        letter-spacing: 2px !important;
+    }
+
+    /* حظر الإزاحة الجانبية والرأسية للـ Lottie وتوسيطه تلقائياً */
+    .robot-canvas,
+    .website-canvas {
+        height: 280px !important;
+        transform: none !important;
+        margin: 0 auto !important;
+        flex: unset !important;
+        width: 100% !important;
+    }
+
+    .lottie-character {
+        width: 260px !important;
+        height: 260px !important;
+    }
+
+    /* 🎭 5. قسم الهوية الشخصية (Identity Studio / About) */
+    .about-header .About {
+        font-size: 38px !important;
+        margin-bottom: 35px !important;
+    }
+
+    .about-content {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding-bottom: 40px !important;
+        gap: 35px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .about-content p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+
+    .mee-container {
+        max-width: 220px !important; /* مقاس مصغر ومتناسق هندسياً لصورتك */
+        margin: 0 auto !important;
+    }
+
+    /* 🛠️ 6. رف الكبسولات التقنية وزر الانتقال المسرحي (Skills Shelf & Action) */
+    .skills-minimal-shelf {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* تحويل المهارات لشبكة متوازنة ومحكمة 2×2 */
+        gap: 12px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .skill-pill-item {
+        padding: 12px !important;
+        min-width: unset !important;
+    }
+
+    .stage-transition-btn {
+        max-width: 100% !important;
+        padding: 18px 25px !important;
+    }
+
+    .stage-transition-btn .btn-text {
+        font-size: 14px !important;
+        letter-spacing: 1px !important;
+    }
+    .mee-container {
+        display: none;
+    }
+
+    /* ✉️ 7. قسم استوديو الاتصال وحوار الفورم (Dialogue Studio) */
+    .contact-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 50px !important;
+    }
+
+    .contact-info-panel {
+        max-width: 100% !important;
+    }
+
+    .feel {
+        font-size: 36px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .glass-form-container {
+        padding: 30px 20px !important; /* تضييق الحواف الداخلية للفورم ليتناسب مع الهواتف */
+        max-width: 100% !important;
+    }
+
+    .form-group {
+        margin-bottom: 25px !important;
+    }
+
+    .form-input {
+        padding: 10px 0 !important;
+        font-size: 15px !important;
+    }
+    /* هندسة إطار الشهادة المصغر تحت النص */
+    .cert-frame {
+        transform: translateX(-80px);
+        width: 110px !important;
+        height: 170px !important;
+    }
+    #sendBtn {
+        padding: 16px !important;
+        font-size: 12px !important;
+        letter-spacing: 2px !important;
+    }
+
+    .social-links-row {
+        gap: 15px 25px !important;
+        justify-content: center !important;
+    }
+
+    /* 🌟 8. صفحة المعرض الثانية وكروتها الملوّنة (Portfolio Studio & Chromatic Cards) */
+    .portfolio-studio-section {
+        padding-top: 160px !important;
+    }
+
+    .portfolio-studio-header {
+        text-align: center !important;
+        margin: 0 auto 40px auto !important;
+    }
+
+    .portfolio-studio-title {
+        font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important; /* One card per row */
+        gap: 25px !important; /* Slightly tighter geometric gap */
+        justify-items: center !important; /* Ensures the downsized cards stay centered */
+    }
+
+    .project-card {
+        width: 85% !important; /* 🌟 Downsized from 100% to 85% for a premium, compact layout */
+        max-width: 340px !important; /* Puts a clean visual cap on extra wide mobile viewports */
+    }
+
+    .project-img {
+        height: 175px !important; /* 🌟 Downsized image viewport height to stay balanced with the card width */
+    }
+
+    .project-info {
+        padding: 20px !important; /* 🌟 Slightly trimmed down padding for an architectural, tight look */
+    }
+
+    .project-info h4 {
+        font-size: 20px !important; /* Balanced typography scale for the smaller layout */
+        letter-spacing: 0.5px !important;
+    }
+
+    .project-info p {
+        font-size: 13px !important; /* Fits perfectly inside the downsized container padding */
+    }
+
+    /* 🎬 9. الستائر المسرحية لصفحة المعرض الثانية (Portfolio Loader) */
+    .portfolio-loader-title {
+        font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+        letter-spacing: 4px !important;
+    }
+
+    /* 🚨 10. التنبيه المنبثق المخصص (Custom Notification Alert) */
+    .custom-alert-content {
+        padding: 30px 20px !important;
+        max-width: 90% !important;
+    }
+
+    .custom-alert-content h3 {
+        font-size: 20px !important;
+        letter-spacing: 1px !important;
+    }
+}

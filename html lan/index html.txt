@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Wael website</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+   <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/jpeg">
+	<link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url(img/wuzror3q.jpg);
+            animation: slide-down 1.5s forwards, move-down 90s infinite 1.2s linear;
+            z-index: -1;
+        }
+
+        @keyframes slide-down {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes move-down {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 0% 100%;
+            }
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="brand">Ahmed<span class="logo">|Web</span></div>
+            <ul class="bar">
+                <li><a href="#home" class="home active">HoMe</a></li>
+                <li><a href="#about" class="about">AboUt</a></li>
+                <li><a href="#contact" class="contact">ConTact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="home" class="section">
+            <div class="par">
+                <div class="h2">Hello My Friend</div>
+                <div class="who"> I'm <span class="name">Ahmed Wael</span> </div>
+                <div class="pro"> professional<span class="jop"> WeB DeVeLoPer </span></div>
+                <footer>
+                    <a href="#contact" class="con-but">
+                        <h3><span>Contact Me</span></h3>
+                    </a>
+                </footer>
+            </div>
+            <spline-viewer class="robot" url="https://prod.spline.design/O0qOKaxkBCPm5gYe/scene.splinecode"></spline-viewer>
+        </div>
+
+            <!-- Home section content -->
+        <div id="about" class="section"> 
+	
+      <div class="container me">
+            <p>
+                I'm a talented young web dev, 15 years old, with an 1-year experience in web dev. Holding a certified certificate from the Russian Cultural Center in Egypt, I've demonstrated my technical and creative skills. My skills include HTML and CSS. Although my professional experience is still in its early stages, I've studied and learned web dev and possess the necessary knowledge to create professional websites. I'm enthusiastic about serving my clients and strive to deliver my best work in every project I undertake.</p>
+                <footer class="end">Just Image And I'll Make It Real</footer>
+            </div>
+			<img src="img/pro.jpg" class="pro" width="210" alt="...">
+ 
+        </div>
+        
+            <!-- About section content -->
+
+        <div id="contact" class="section">
+        
+           <div class="glass">
+            
+               <p class="feel">Feel Free To Contact Me</p>
+               <div class="cardd">
+               <ul class="user-menu">
+                   
+    <li class="nam">
+        <span>Name</span>
+        <input type="text" class="text">
+    </li>
+                   
+  <li class="type">  
+    <span>You are:</span>
+    <select id="user-type" name="user-type">
+      <option value="student">Student</option>
+      <option valu me="client">Client</option>
+    </select>
+  </li>
+                   
+  <li>
+    <span>E-mail</span>
+    <input type="email" id="email">
+  </li>
+                   
+                   
+   
+                   
+  <li class="message">
+    <span>Send Message:</span>
+    <textarea id="message" name="message" placeholder="Write your message here"></textarea>
+    <button type="submit">Send</button>
+  </li>
+                   
+</ul>
+          <div class="i">     
+           <a href="https://www.instagram.com/its_ahmad2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@its.ahmed544?refer=creator_embed"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/p/1AntfaTZDM/"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://x.com/ahme873540"><i class="fa-brands fa-x-twitter"></i></a>   </div> 
+            
+            </div>
+               
+            </div>
+        </div>
+        
+          <!-- Contact section content -->
+    </main>
+    
+    <div class="scripts">
+    <script src="https://kit.fontawesome.com/ff492dc6bf.js" crossorigin="anonymous"></script>
+    <script>
+       const sections = document.querySelectorAll('.section');
+const navbarLinks = document.querySelectorAll('.navbar ul li a');
+const robot = document.querySelector('.robot');
+
+navbarLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+    if (href.includes('#home') || href.includes('#about') || href.includes('#contact')) {
+      navbarLinks.forEach((l) => {
+        l.classList.remove('active');
+      });
+      link.classList.add('active');
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        if (targetId === 'home') {
+          robot.style.display = 'block';
+        } else {
+          robot.style.display = 'none';
+        }
+      }, 100);
+    }
+  });
+});
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  if (scrollPosition < sections[0].offsetHeight) {
+    robot.style.display = 'block';
+  } else {
+    robot.style.display = 'none';
+  }
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionBottom = sectionTop + section.offsetHeight;
+    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      const currentSectionId = section.getAttribute('id');
+      navbarLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSectionId && (currentSectionId === 'home' || currentSectionId === 'about' || currentSectionId === 'contact')) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+});
+       </script>
+        
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
+        
+        
+    <script src="jvs/bootstrap.bundle.js"></script>
+        
+        
+   
+        </div>
+</body>
+</html>

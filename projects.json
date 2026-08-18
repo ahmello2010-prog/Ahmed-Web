@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Little Plants Project",
+        "description": "Click here to preview the project",
+        "link": "https://little-plants.vercel.app/",
+        "image": "img/plants img.png",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "plants-style"
+    },
+    {
+        "title": "MP3 Converter",
+        "description": "Click here to preview the project",
+        "link": "https://converteee-mp3.vercel.app/",
+        "image": "img/convertor.jpeg",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "mp3-style"
+    },
+    {
+        "title": "Neon Football",
+        "description": "Click here to preview the project",
+        "link": "https://neon-football-pi.vercel.app/",
+        "image": "img/football.jpg",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "football-style"
+    },
+    {
+        "title": "Nostalgia 90s",
+        "description": "Click here to preview the project",
+        "link": "https://nostalgia-90s.vercel.app/",
+        "image": "img/nostalgia.jpeg",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "nostalgia-style"
+    },
+    {
+        "title": "Asian Food Project",
+        "description": "Click here to preview the project",
+        "link": "https://asian-food-chi.vercel.app/",
+        "image": "img/Asian.jpg",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "asian-style"
+    },
+    {
+        "title": "Venus Tours Project",
+        "description": "Click here to preview the project",
+        "link": "https://venustours.vercel.app/",
+        "image": "img/venus.jpeg",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "venus-style"
+    }
+]
