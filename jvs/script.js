@@ -1,18 +1,12 @@
-// ==========================================================================
-// JAVASCRIPT PART 1: SMART CINEMATIC LOADER & THEATRICAL STAGE TRANSITION
-// ==========================================================================
-
 document.addEventListener("DOMContentLoaded", () => {
     const counterElement = document.getElementById("introCounter");
     const loader = document.getElementById("intro-loader");
 
     if (loader) {
-        // فحص ذاكرة الجلسة للمتصفح لمنع تكرار الإنترو عند العودة من البورتفوليو
         if (localStorage.getItem("introExecuted") === "true") {
             loader.style.display = "none";
             document.body.classList.add("loaded");
         } else {
-            // الزيارة الأولى للموقع: تشغيل العداد والأنيميشن بالكامل
             let count = 0;
             const counterInterval = setInterval(() => {
                 count += Math.floor(Math.random() * 4) + 1;
@@ -27,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             loader.classList.add("split");
                             document.body.classList.add("loaded");
 
-                            // حفظ حالة تشغيل الإنترو في الذاكرة
                             localStorage.setItem("introExecuted", "true");
 
                             setTimeout(() => {
@@ -44,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 🎭 برمجة تأثير الانتقال المسرحي عند الضغط على زر معرض الأعمال
     const stageTrigger = document.getElementById("stageTrigger");
 
     if (stageTrigger && loader) {
@@ -52,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             const destinationUrl = this.getAttribute("href");
 
-            // إعادة إظهار شاشة الستائر وإغلاقها مسرحياً
             loader.style.display = "flex";
             loader.classList.add("stage-close");
 
@@ -63,11 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ==========================================================================
-// JAVASCRIPT PART 2: DYNAMIC JSON CERTIFICATE GALLERY & LIGHTBOX SYSTEM
-// ==========================================================================
-
-// دالة جلب الشهادات من ملف JSON المنفصل ورصها تلقائياً بالـ DOM
 async function loadDynamicCertificates() {
     try {
         const response = await fetch("certificates.json");
@@ -77,7 +63,6 @@ async function loadDynamicCertificates() {
 
         if (!container) return;
 
-        // ضخ الشهادات ديناميكياً بستايل إطار يوتيوب المتطور وأيقونة الـ Expand
         container.innerHTML = certificates
             .map(
                 (cert) => `
@@ -89,14 +74,12 @@ async function loadDynamicCertificates() {
             )
             .join("");
 
-        // تشغيل وربط محرك الـ Lightbox التكبيري فور اكتمال البناء برمجياً
         initCertificateLightbox();
     } catch (error) {
         console.error("System Error loading credentials dashboard:", error);
     }
 }
 
-// دالة تفعيل المودال والانبثاق السينمائي عند الضغط على أي شهادة
 function initCertificateLightbox() {
     const certFrames = document.querySelectorAll(".cert-trigger-node");
     const certModal = document.getElementById("certLightboxModal");
@@ -106,7 +89,6 @@ function initCertificateLightbox() {
     if (certFrames.length > 0 && certModal && certImgTarget) {
         certFrames.forEach((frame) => {
             frame.addEventListener("click", function () {
-                // لقط مسار الصورة المخزن ديناميكياً في الخاصية data-src
                 const imageSrc = this.getAttribute("data-src");
                 if (imageSrc) {
                     certImgTarget.src = imageSrc;
@@ -133,22 +115,16 @@ function initCertificateLightbox() {
             certModal.classList.remove("show-lightbox");
             setTimeout(() => {
                 certModal.style.display = "none";
-                certImgTarget.src = ""; // تفريغ الذاكرة لسرعة الأداء
+                certImgTarget.src = "";
             }, 400);
         }
     }
 }
 
-// ==========================================================================
-// JAVASCRIPT PART 3: EMAILJS Core CORE & INTERACTIVE FORM TRANSMISSION
-// ==========================================================================
-
-// تهيئة خدمة EmailJS الأساسية لإرسال الرسائل الحقيقية
 (function () {
     emailjs.init("_8RL1bqoG0sooKzNW");
 })();
 
-// دالة إظهار النافذة المنبثقة المخصصة البديلة للـ alert التقليدي المزعج
 function showCustomAlert(title, message, isSuccess) {
     const modal = document.getElementById("customAlertModal");
     const titleElement = document.getElementById("customAlertTitle");
@@ -167,7 +143,6 @@ function showCustomAlert(title, message, isSuccess) {
     }, 10);
 }
 
-// دالة إرسال الإيميل المتطورة مع دمج الـ Custom Alert
 function sendEmail(e) {
     e.preventDefault();
 
@@ -216,15 +191,9 @@ function sendEmail(e) {
         });
 }
 
-// ==========================================================================
-// JAVASCRIPT PART 4: SMOOTH NAVIGATION SCROLL & ACTIVE LINK OBSERVER
-// ==========================================================================
-
 document.addEventListener("DOMContentLoaded", () => {
-    // 🌟 تشغيل دالة جلب الشهادات من ملف الـ JSON فور تحميل الصفحة
     loadDynamicCertificates();
 
-    // ربط زر إغلاق النافذة المنبثقة المخصصة للفورم
     const closeAlertBtn = document.getElementById("closeAlertBtn");
     const customAlertModal = document.getElementById("customAlertModal");
 
@@ -237,7 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // برمجة الضغط على روابط الـ Navbar للتنقل السلس (Smooth Scroll)
     const navLinks = document.querySelectorAll(".navbar ul li a");
     navLinks.forEach((link) => {
         link.addEventListener("click", function (e) {
@@ -255,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // تفعيل الـ Active Link بدقة فائقة أثناء الـ Scroll باستخدام الـ Intersection Observer
     const sections = document.querySelectorAll("section, .section");
 
     const observerOptions = {
