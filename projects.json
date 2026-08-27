@@ -46,13 +46,5 @@
         "image": "img/venus.jpeg",
         "icon": "fa-solid fa-arrow-up-right-from-square",
         "class": "venus-style"
-    },
-    {
-        "title": "Game Haven",
-        "description": "Click here to preview the project",
-        "link": "https://gamehaven-sigma.vercel.app/",
-        "image": "img/games.jpeg",
-        "icon": "fa-solid fa-arrow-up-right-from-square",
-        "class": "games-style"
     }
 ]
