@@ -1443,6 +1443,7 @@ select.form-input option {
 
     .projects-grid {
         grid-template-columns: 1fr !important;
+        margin-bottom: 20px;
         gap: 25px !important;
         justify-items: center !important;
     }

@@ -46,5 +46,13 @@
         "image": "img/venus.jpeg",
         "icon": "fa-solid fa-arrow-up-right-from-square",
         "class": "venus-style"
+    },
+    {
+        "title": "Great Songs",
+        "description": "Click here to preview the project (⚙️SITE UNDER DEVELOPMENT⚙️) ",
+        "link": "https://greatsongs.vercel.app/",
+        "image": "img/songs.jpeg",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "songs-style"
     }
 ]
