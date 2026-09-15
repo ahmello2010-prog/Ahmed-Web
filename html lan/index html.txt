@@ -1,211 +1,221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Wael website</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-   <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/jpeg">
-	<link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            position: relative;
-            overflow-x: hidden;
-        }
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ahmed|Web</title>
 
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-image: url(img/wuzror3q.jpg);
-            animation: slide-down 1.5s forwards, move-down 90s infinite 1.2s linear;
-            z-index: -1;
-        }
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Ahmed|web" />
+        <link rel="manifest" href="/site.webmanifest" />
 
-        @keyframes slide-down {
-            0% {
-                transform: translateY(-100%);
-            }
-            100% {
-                transform: translateY(0%);
-            }
-        }
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="intro-loader">
+            <div class="intro-curtain left-curtain"></div>
+            <div class="intro-curtain right-curtain"></div>
+            <div class="intro-content">
+                <div class="intro-title">AHMED|WEB</div>
+                <div class="intro-subtitle">THE NEW ERA OF INTERACTIVE WEB</div>
+                <div class="intro-counter" id="introCounter">00</div>
+            </div>
+        </div>
 
-        @keyframes move-down {
-            0% {
-                background-position: 0% 0%;
-            }
-            100% {
-                background-position: 0% 100%;
-            }
-        }
+        <header>
+            <nav class="navbar">
+                <div class="brand">AHMED<span class="logo-dot">|Web</span></div>
+                <ul class="bar">
+                    <li><a href="#home" class="navbar-link active">Concept</a></li>
+                    <li><a href="#about" class="navbar-link">Identity</a></li>
+                    <li><a href="#contact" class="navbar-link">Dialogue</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        .section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="brand">Ahmed<span class="logo">|Web</span></div>
-            <ul class="bar">
-                <li><a href="#home" class="home active">HoMe</a></li>
-                <li><a href="#about" class="about">AboUt</a></li>
-                <li><a href="#contact" class="contact">ConTact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div id="home" class="section">
-            <div class="par">
-                <div class="h2">Hello My Friend</div>
-                <div class="who"> I'm <span class="name">Ahmed Wael</span> </div>
-                <div class="pro"> professional<span class="jop"> WeB DeVeLoPer </span></div>
-                <footer>
-                    <a href="#contact" class="con-but">
-                        <h3><span>Contact Me</span></h3>
+        <main>
+            <section id="home" class="section">
+                <div class="hero-wrapper">
+                    <div class="par">
+                        <h2>MINDSET & EXPERIENCE</h2>
+                        <h1 class="who">Weaving Code<br />Into Emotional<br />Experiences.</h1>
+                        <p class="pro">
+                            A Front-End Developer born in 2010, constructing immersive virtual spaces that blur the line
+                            between logic and pure imagination.
+                        </p>
+                        <div class="home-action">
+                            <a href="#contact" class="con-but">Initiate Dialogue</a>
+                        </div>
+                    </div>
+
+                    <div class="robot-canvas">
+                        <script
+                            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.4/dist/dotlottie-wc.js"
+                            type="module"></script>
+                        <dotlottie-wc
+                            src="https://lottie.host/a76feec7-afea-4484-a5b3-7f4bea3c78e2/ghvVMMZxW7.lottie"
+                            class="lottie-character"
+                            autoplay
+                            loop>
+                        </dotlottie-wc>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section">
+                <div class="about-header">
+                    <h2 class="section-tag">01 // IDENTITY</h2>
+                    <h3 class="About">Just Imagine, And I'll Make It Real.</h3>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text-column">
+                        <p>
+                            I'm a talented young web dev, born in 2010, I started developing since 2024 . Holding a
+                            certified certificate from the Russian Cultural Center in Egypt, I've demonstrated my
+                            technical and creative skills. Although my professional experience is still in its early
+                            stages, I've studied and learned web dev and possess the necessary knowledge to create
+                            professional websites. I'm enthusiastic about serving my clients and strive to deliver my
+                            best work in every project I undertake. I don't just write HTML, CSS, or JavaScript—I shape
+                            digital architecture. Although my journey is in its dawn, my vision is absolute: delivering
+                            uncompromising quality and cutting-edge user experiences for clients worldwide.
+                        </p>
+
+                        <div class="certificate-preview-container">
+                            <span class="cert-label">
+                                <i class="fa-solid fa-certificate"></i> Certified Professional Credentials
+                            </span>
+
+                            <div class="cert-gallery-row" id="certificatesContainer"></div>
+                        </div>
+                    </div>
+
+                    <div class="mee-container">
+                        <img src="img/profile.jpg" class="mee" alt="Ahmed Wael Portrait" />
+                    </div>
+                </div>
+
+                <div class="theatrical-action-zone">
+                    <div class="skills-minimal-shelf">
+                        <div class="skill-pill-item html-pill">
+                            <i class="fa-brands fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-pill-item css-pill">
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-pill-item js-pill">
+                            <i class="fa-brands fa-js"></i>
+                            <span>JAVASCRIPT</span>
+                        </div>
+                        <div class="skill-pill-item json-pill">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Asynchronous JS</span>
+                        </div>
+                    </div>
+
+                    <a href="portfolio.html" class="stage-transition-btn" id="stageTrigger">
+                        <span class="btn-text">Enter The Artifacts Exhibition</span>
+                        <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
                     </a>
-                </footer>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="contact-wrapper">
+                    <div class="contact-info-panel">
+                        <h2 class="section-tag">02 // DIALOGUE</h2>
+                        <h3 class="feel">Have a vision?<br />Let's craft it.</h3>
+                        <p class="contact-desc">
+                            Feel free to drop a line for collaborations, client work, or just to talk about the future
+                            of front-end engineering.
+                        </p>
+                    </div>
+
+                    <div class="glass-form-container">
+                        <form id="emailForm" onsubmit="sendEmail(event)">
+                            <div class="form-group">
+                                <label>YOUR NAME</label>
+                                <input type="text" class="form-input" required placeholder="John Doe" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>YOUR STANDING</label>
+                                <select id="user-type" class="form-input">
+                                    <option value="client">Potential Client</option>
+                                    <option value="student">Fellow Student / Developer</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>YOUR EMAIL</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-input"
+                                    required
+                                    placeholder="john@example.com" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>THE MESSAGE</label>
+                                <textarea
+                                    id="message"
+                                    class="form-input"
+                                    required
+                                    placeholder="Describe your vision here..."></textarea>
+                            </div>
+
+                            <button type="submit" id="sendBtn">Transmit Message</button>
+                        </form>
+
+                        <div class="social-links-row">
+                            <a
+                                href="https://www.instagram.com/its_ahmad2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                            <a
+                                href="https://www.tiktok.com/@its.ahmed544?refer=creator_embed"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><i class="fa-brands fa-tiktok"></i
+                            ></a>
+                            <a href="https://github.com/ahmello2010-prog" target="_blank" rel="noopener noreferrer"
+                                ><i class="fa-brands fa-github"></i
+                            ></a>
+                            <a
+                                href="https://www.facebook.com/share/p/1AntfaTZDM/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><i class="fa-brands fa-facebook"></i
+                            ></a>
+                            <a href="https://x.com/AhmadEllo5l5" target="_blank" rel="noopener noreferrer"
+                                ><i class="fa-brands fa-x-twitter"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="customAlertModal" class="custom-alert-overlay">
+            <div class="custom-alert-content">
+                <h3 id="customAlertTitle">TRANSMISSION SUCCESSFUL</h3>
+                <p id="customAlertMessage">Your dialogue request has been securely processed.</p>
+                <button type="button" id="closeAlertBtn">Acknowledge</button>
             </div>
-            <spline-viewer class="robot" url="https://prod.spline.design/O0qOKaxkBCPm5gYe/scene.splinecode"></spline-viewer>
         </div>
 
-            <!-- Home section content -->
-        <div id="about" class="section"> 
-	
-      <div class="container me">
-            <p>
-                I'm a talented young web dev, 15 years old, with an 1-year experience in web dev. Holding a certified certificate from the Russian Cultural Center in Egypt, I've demonstrated my technical and creative skills. My skills include HTML and CSS. Although my professional experience is still in its early stages, I've studied and learned web dev and possess the necessary knowledge to create professional websites. I'm enthusiastic about serving my clients and strive to deliver my best work in every project I undertake.</p>
-                <footer class="end">Just Image And I'll Make It Real</footer>
-            </div>
-			<img src="img/pro.jpg" class="pro" width="210" alt="...">
- 
-        </div>
-        
-            <!-- About section content -->
-
-        <div id="contact" class="section">
-        
-           <div class="glass">
-            
-               <p class="feel">Feel Free To Contact Me</p>
-               <div class="cardd">
-               <ul class="user-menu">
-                   
-    <li class="nam">
-        <span>Name</span>
-        <input type="text" class="text">
-    </li>
-                   
-  <li class="type">  
-    <span>You are:</span>
-    <select id="user-type" name="user-type">
-      <option value="student">Student</option>
-      <option valu me="client">Client</option>
-    </select>
-  </li>
-                   
-  <li>
-    <span>E-mail</span>
-    <input type="email" id="email">
-  </li>
-                   
-                   
-   
-                   
-  <li class="message">
-    <span>Send Message:</span>
-    <textarea id="message" name="message" placeholder="Write your message here"></textarea>
-    <button type="submit">Send</button>
-  </li>
-                   
-</ul>
-          <div class="i">     
-           <a href="https://www.instagram.com/its_ahmad2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@its.ahmed544?refer=creator_embed"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://www.facebook.com/share/p/1AntfaTZDM/"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://x.com/ahme873540"><i class="fa-brands fa-x-twitter"></i></a>   </div> 
-            
-            </div>
-               
-            </div>
-        </div>
-        
-          <!-- Contact section content -->
-    </main>
-    
-    <div class="scripts">
-    <script src="https://kit.fontawesome.com/ff492dc6bf.js" crossorigin="anonymous"></script>
-    <script>
-       const sections = document.querySelectorAll('.section');
-const navbarLinks = document.querySelectorAll('.navbar ul li a');
-const robot = document.querySelector('.robot');
-
-navbarLinks.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const href = link.getAttribute('href');
-    if (href.includes('#home') || href.includes('#about') || href.includes('#contact')) {
-      navbarLinks.forEach((l) => {
-        l.classList.remove('active');
-      });
-      link.classList.add('active');
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        if (targetId === 'home') {
-          robot.style.display = 'block';
-        } else {
-          robot.style.display = 'none';
-        }
-      }, 100);
-    }
-  });
-});
-
-window.addEventListener('scroll', () => {
-  const scrollPosition = window.scrollY;
-  if (scrollPosition < sections[0].offsetHeight) {
-    robot.style.display = 'block';
-  } else {
-    robot.style.display = 'none';
-  }
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionBottom = sectionTop + section.offsetHeight;
-    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-      const currentSectionId = section.getAttribute('id');
-      navbarLinks.forEach((link) => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentSectionId && (currentSectionId === 'home' || currentSectionId === 'about' || currentSectionId === 'contact')) {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-});
-       </script>
-        
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
-        
-        
-    <script src="jvs/bootstrap.bundle.js"></script>
-        
-        
-   
-        </div>
-</body>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
+        <script src="https://kit.fontawesome.com/ff492dc6bf.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="jvs/script.js"></script>
+    </body>
 </html>

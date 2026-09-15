@@ -1001,6 +1001,263 @@ select.form-input option {
     transform: scale(1.15);
 }
 
+/* ============================================================================
+   AHMED | WEB — LIGHT MODE COLOR SYSTEM
+   Append this entire block to the END of style.css.
+   Zero layout/spacing/animation logic is touched — this file only
+   redefines color tokens and adds scoped [data-theme="light"] overrides
+   for the hardcoded colors that don't already consume a CSS variable.
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   1. CORE TOKEN OVERRIDES
+   Your file already threads --bg-obsidian, --accent-gold-bright,
+   --text-pure-white, --text-slate-light and --surface-card-dark through
+   almost every component via var(). Redefining them here is what makes
+   ~80% of the site re-theme automatically with zero further overrides —
+   including the #sendBtn inversion trick (white-btn-on-dark becomes
+   dark-btn-on-light automatically because both tokens flip together).
+
+   BUG FIX: your existing theme-switcher block (search for
+   `--theme-text: white;`) sets light-mode text to WHITE, which is
+   invisible on a white background. Fixed below.
+   ---------------------------------------------------------------------------- */
+[data-theme="light"] {
+    /* Backgrounds */
+    --bg-obsidian: #f6f4f0; /* warm off-white, not clinical #fff — pairs with the gold accent */
+    --surface-card-dark: #ffffff; /* cards sit a shade lighter than the page for elevation */
+
+    /* Text */
+    --text-pure-white: #17161a; /* deep charcoal — AAA contrast on #f6f4f0 (~15:1) */
+    --text-slate-light: #52525b; /* muted slate — AAA-large / AA-normal contrast (~7:1) */
+
+    /* Brand accent — the original #d9b88c is far too light to read on a
+       light surface, so it's deepened into a burnished bronze that keeps
+       the same hue/warmth but is actually legible (AA/AAA on light bg) */
+    --accent-gold-bright: #a06a2c;
+
+    /* Border/glow tint, rebuilt from the new accent's RGB */
+    --border-glow: rgba(160, 106, 44, 0.22);
+
+    /* Legacy theme-switcher pair (bug fix: was `white` on `white`) */
+    --theme-bg: #f6f4f0;
+    --theme-text: #17161a;
+}
+
+/* ----------------------------------------------------------------------------
+   2. INTENTIONALLY LEFT UNTHEMED (documented, not an oversight)
+   - .intro-curtain / .intro-title / .intro-counter → the splash-screen
+     curtain is a fixed dark cinematic overlay that always sits on top of
+     everything before `main` reveals; theming it would fight its own
+     one-time reveal animation.
+   - .lightbox-overlay / .nav-modal / .custom-alert-overlay → full-screen
+     scrims for photo viewing / modals. Dimming to near-black is the
+     standard, expected pattern for image lightboxes and modal backdrops
+     in both light and dark UIs, so these stay dark on purpose.
+   - .plants-style / .certificate-style / .mp3-style / .football-style /
+     .nostalgia-style / .asian-style / .venus-style → each project card's
+     own saturated dark tint is a deliberate per-project identity (like
+     colored tech-stack swatches). They read as intentional accent tiles
+     floating on the new light page and stay untouched.
+   ---------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------
+   3. NAVBAR (glassmorphism bar)
+   Hardcoded rgba(4,4,5,.75) glass fill + hairline border. Scoped to
+   min-width:1031px so it never fights your existing mobile media-query
+   navbar rule, which already re-themes correctly via var(--bg-obsidian).
+   ---------------------------------------------------------------------------- */
+@media (min-width: 1031px) {
+    [data-theme="light"] .navbar {
+        background: rgba(246, 244, 240, 0.75) !important;
+        border-bottom: 1px solid rgba(23, 22, 26, 0.06) !important;
+    }
+}
+
+/* ----------------------------------------------------------------------------
+   4. HERO KINETIC TYPE
+   The crimson focal letter's hue is kept, just deepened slightly for
+   contrast, and the glow (built for a black backdrop) is toned down so
+   it doesn't look like a smudge on a light surface.
+   ---------------------------------------------------------------------------- */
+[data-theme="light"] body.loaded .kinetic-letter.focal-crimson {
+    color: #c8102e !important;
+    text-shadow: 0 0 18px rgba(200, 16, 46, 0.25) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   5. ABOUT / CERTIFICATE / PROFILE FRAMES
+   Hairline borders and image placeholder fills that were tuned for a
+   near-black canvas. !important mirrors your own codebase convention
+   (your responsive .about-content rule at max-width:768px already uses
+   !important, so this guarantees the override wins there too).
+   ---------------------------------------------------------------------------- */
+[data-theme="light"] .about-content {
+    border-bottom: 1px solid rgba(23, 22, 26, 0.08) !important;
+}
+
+[data-theme="light"] .cert-frame {
+    border: 1px solid rgba(23, 22, 26, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(23, 22, 26, 0.12) !important;
+}
+
+[data-theme="light"] .cert-frame img {
+    filter: brightness(0.97) contrast(1.02) !important;
+}
+
+[data-theme="light"] .lightbox-scaled-image {
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   6. SKILL PILLS / STAGE-TRANSITION BUTTON / PROJECT CARDS
+   Same fix pattern: --surface-card-dark already re-themes the fill;
+   only the hardcoded hairline borders need a scoped override.
+   ---------------------------------------------------------------------------- */
+[data-theme="light"] .skill-pill-item {
+    border: 1px solid rgba(23, 22, 26, 0.08) !important;
+}
+
+[data-theme="light"] .stage-transition-btn {
+    border: 1px solid rgba(23, 22, 26, 0.1) !important;
+}
+
+[data-theme="light"] .project-card {
+    border: 1px solid rgba(23, 22, 26, 0.08) !important;
+}
+
+[data-theme="light"] .project-img {
+    background: #e9e7e2 !important; /* neutral placeholder while the image loads */
+}
+
+/* ----------------------------------------------------------------------------
+   7. CONTACT — GLASS FORM CONTAINER, INPUTS, SELECT BOXES, SEND BUTTON
+   The most detail-sensitive section: native <select> option lists don't
+   inherit CSS variables reliably across browsers, so they get an
+   explicit override.
+   ---------------------------------------------------------------------------- */
+[data-theme="light"] .glass-form-container {
+    border: 1px solid rgba(23, 22, 26, 0.08) !important;
+    box-shadow: 0 30px 60px rgba(23, 22, 26, 0.1) !important;
+}
+
+[data-theme="light"] .form-input {
+    border-bottom: 2px solid rgba(23, 22, 26, 0.15) !important;
+}
+
+[data-theme="light"] select.form-input option {
+    background: #ffffff !important;
+    color: #17161a !important;
+}
+
+[data-theme="light"] #sendBtn:disabled {
+    background: #e4e2dc !important;
+    color: #9a988f !important;
+}
+
+/* ----------------------------------------------------------------------------
+   8. CUSTOM ALERT MODAL
+   The dark scrim (.custom-alert-overlay) stays dark by design (see
+   section 2) — only the alert card's hairline border needs updating,
+   its fill already re-themes via --surface-card-dark.
+   ---------------------------------------------------------------------------- */
+[data-theme="light"] .custom-alert-content {
+    border: 1px solid rgba(23, 22, 26, 0.08) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   9. SOCIAL LINKS ROW
+   ---------------------------------------------------------------------------- */
+[data-theme="light"] .social-links-row {
+    border-top: 1px solid rgba(23, 22, 26, 0.08) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   10. MOBILE NAV TOOLTIP BADGE / PROFILE AVATAR
+   Your file already has a correct light override for .tooltip-badge's
+   background (line ~1104) — left untouched. .profile-img-nav's border
+   consumes var(--theme-text), so it now themes correctly for free once
+   the bug fix in section 1 is applied.
+   ---------------------------------------------------------------------------- */
+
+ul.bt-light {
+    list-style: none;
+}
+
+.theme-btn {
+    background: none;
+    list-style: none;
+    border: none;
+    color: inherit;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Hide mobile structures on desktop layout */
+.nav-left-mobile,
+.nav-modal {
+    display: none;
+}
+
+/* ==========================================================================
+   Responsive Smartphone Layout (Media Query max-width: 768px)
+   ========================================================================== */
+
+/* Keyframes for the Upward Bouncing Arrow Motion */
+@keyframes arrowBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px); /* Bounces upward gently */
+    }
+}
+
+/* Image Expansion Fullscreen Modal Styling */
+.nav-modal {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+.nav-modal-content {
+    max-width: 85%;
+    max-height: 80%;
+    border-radius: 8px;
+    animation: zoomAnimation 0.2s ease;
+}
+.nav-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+@keyframes zoomAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 1030px) {
     .navbar {
         padding: 30px 5% !important;
@@ -1224,6 +1481,70 @@ select.form-input option {
     }
 }
 
+@media (max-width: 768px) {
+    /* 2. Left Column: Image & Sub-Badge Setup */
+    .nav-left-mobile {
+        display: flex !important;
+        grid-column: 1;
+        justify-content: flex-start;
+    }
+    .profile-container {
+        display: flex;
+        flex-direction: column; /* Stacks text element vertically under image */
+        align-items: center;
+        position: relative;
+        gap: 4px;
+    }
+    .profile-img-nav {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1.5px solid var(--theme-text);
+        cursor: pointer;
+    }
+
+    /* Floating under-image text badge */
+    .tooltip-badge {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background-color: rgba(255, 255, 255, 0.12);
+        padding: 8px 6px;
+        top: 50px;
+        left: -12px;
+        border-radius: 4px;
+        white-space: nowrap;
+        font-size: 0.55rem;
+        color: var(--theme-text);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    [data-theme="light"] .tooltip-badge {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    /* Dismiss X Button styling */
+    .close-badge-btn {
+        cursor: pointer;
+        padding: 0 2px;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+        font-size: 0.6rem;
+    }
+    .close-badge-btn:hover {
+        opacity: 1;
+    }
+
+    /* Infinite bouncing animation setup pointing up */
+    .bounce-arrow {
+        animation: arrowBounce 1.2s infinite ease-in-out;
+        font-size: 0.55rem;
+    }
+
+    /* 3. Right Column: Force theme toggler visibility only */
+}
+
 @media (max-width: 541px) {
     .navbar {
         padding: 20px 6% !important;
@@ -1234,9 +1555,12 @@ select.form-input option {
         gap: 15px !important;
         display: none;
     }
-
+    .brand {
+        font-size: larger;
+    }
     .navbar-link {
         font-size: 11px !important;
+
         letter-spacing: 1px !important;
     }
     .robot-canvas {
@@ -1483,5 +1807,18 @@ select.form-input option {
     .custom-alert-content h3 {
         font-size: 20px !important;
         letter-spacing: 1px !important;
+    }
+
+    ul.bt-light {
+        background: none;
+        list-style: none;
+        border: none;
+        color: inherit;
+        font-size: 1.1rem;
+        cursor: pointer;
+        padding: 0 5px;
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s;
     }
 }

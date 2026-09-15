@@ -1,3 +1,19 @@
+// ==========================================
+// Persistent Theme Restore — must run first,
+// before the intro-loader's DOMContentLoaded logic
+// ==========================================
+(function initPersistedTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    const themeIcon = document.getElementById("themeIcon");
+
+    if (savedTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+        if (themeIcon) themeIcon.className = "fa-solid fa-sun";
+    } else {
+        document.documentElement.removeAttribute("data-theme");
+        if (themeIcon) themeIcon.className = "fa-solid fa-moon";
+    }
+})();
 document.addEventListener("DOMContentLoaded", () => {
     const counterElement = document.getElementById("introCounter");
     const loader = document.getElementById("intro-loader");
@@ -256,3 +272,45 @@ window.onbeforeunload = function () {
 window.onload = function () {
     window.scrollTo(0, 0);
 };
+// ==========================================
+// Dark / Light Mode Switching Setup
+// ==========================================
+const themeToggleBtn = document.getElementById("themeToggleBtn");
+const themeIcon = document.getElementById("themeIcon");
+
+if (themeToggleBtn && themeIcon) {
+    themeToggleBtn.addEventListener("click", () => {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+
+        if (isLight) {
+            document.documentElement.removeAttribute("data-theme");
+            themeIcon.className = "fa-solid fa-moon";
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            themeIcon.className = "fa-solid fa-sun";
+            localStorage.setItem("theme", "light");
+        }
+    });
+}
+// ==========================================
+// Modal Handlers & Tooltip Eraser Controls
+// ==========================================
+function openProfileModal() {
+    const modal = document.getElementById("profileImageModal");
+    if (modal) modal.style.display = "flex";
+}
+
+function closeProfileModal() {
+    const modal = document.getElementById("profileImageModal");
+    if (modal) modal.style.display = "none";
+}
+
+// Drops/Erases the notice text banner cleanly if user hits the internal "X"
+function dismissTooltip(event) {
+    event.stopPropagation(); // Stops the container click action from triggering the image modal link
+    const badge = document.getElementById("tooltipBadge");
+    if (badge) {
+        badge.style.display = "none"; // Closes or completely deletes the sub-text box
+    }
+}

@@ -28,11 +28,39 @@
 
         <header>
             <nav class="navbar">
+                <div class="nav-left-mobile">
+                    <div class="profile-container">
+                        <!-- Profile Image stays clickable to launch modal -->
+                        <img
+                            src="img/profile.jpg"
+                            alt="Ahmed Wael"
+                            class="profile-img-nav"
+                            onclick="openProfileModal()" />
+
+                        <!-- Bouncing guide text block located underneath the image -->
+                        <div class="tooltip-badge" id="tooltipBadge">
+                            <i class="fa-solid fa-xmark close-badge-btn" onclick="dismissTooltip(event)"></i>
+                            <span onclick="openProfileModal()">CLICK</span>
+                            <i class="fa-solid fa-arrow-up bounce-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. اسم البراند الأصلي (للكمبيوتر) + الاسم المخصص للهاتف (مخفي حالياً) -->
                 <div class="brand">AHMED<span class="logo-dot">|Web</span></div>
+
+                <!-- 3. القائمة الأصلية مع إضافة العنصر الرابع الجديد (زر تبديل الوضع) -->
                 <ul class="bar">
                     <li><a href="#home" class="navbar-link active">Concept</a></li>
                     <li><a href="#about" class="navbar-link">Identity</a></li>
                     <li><a href="#contact" class="navbar-link">Dialogue</a></li>
+                </ul>
+                <ul class="bt-light">
+                    <li class="theme-toggle-item">
+                        <button id="themeToggleBtn" class="theme-btn" aria-label="Toggle Theme">
+                            <i class="fa-solid fa-moon" id="themeIcon"></i>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -115,7 +143,7 @@
                         </div>
                         <div class="skill-pill-item json-pill">
                             <i class="fa-solid fa-code"></i>
-                            <span>JSON ENGINE</span>
+                            <span>Asynchronous JS</span>
                         </div>
                     </div>
 
@@ -211,6 +239,12 @@
                 <p id="customAlertMessage">Your dialogue request has been securely processed.</p>
                 <button type="button" id="closeAlertBtn">Acknowledge</button>
             </div>
+        </div>
+
+        <!-- مودال تكبير الصورة (مخفي دائماً ويظهر فقط عند الضغط على الصورة في الهاتف) -->
+        <div id="profileImageModal" class="nav-modal" onclick="closeProfileModal()">
+            <span class="nav-modal-close">&times;</span>
+            <img class="nav-modal-content" id="fullProfileImage" src="img/profile.jpg" alt="صورة مكبرة" />
         </div>
 
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
