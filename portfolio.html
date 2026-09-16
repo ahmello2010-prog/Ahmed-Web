@@ -8,6 +8,20 @@
 
         <!-- ملف التنسيق الموحد عالي التباين (Obsidian Onyx) -->
         <link href="css/style.css" rel="stylesheet" />
+
+        <!-- 🌗 تطبيق فوري لوضع الظل/النور المحفوظ قبل رسم الصفحة لمنع وميض التحول (Anti-FOUC) -->
+        <script>
+            (function () {
+                try {
+                    var savedTheme = localStorage.getItem("ahmedweb-theme");
+                    if (savedTheme === "light" || savedTheme === "dark") {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    }
+                } catch (e) {
+                    /* الوصول للـ localStorage غير متاح (وضع خاص مثلاً) — نستمر بالوضع الافتراضي الداكن */
+                }
+            })();
+        </script>
         <style>
             /* ==========================================================================
        THEATRICAL EXHIBITION SPACE - PORTFOLIO STYLES (COMPACT HIGH-CONTRAST)
@@ -24,6 +38,18 @@
                 /* 🌟 تعيين المتغيرات للخطوط المحدثة الجديدة بدقة */
                 --font-serif-display: "Bebas Neue", sans-serif;
                 --font-sans-ui: "Roboto Condensed", sans-serif;
+
+                /* ⏱️ مدة الانتقال السلس بين وضعي الظل والنور */
+                --theme-transition: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            /* ☀️ الوضع الفاتح (Light Mode) — نفس هوية الدقة لكن بعكس القيم اللونية */
+            :root[data-theme="light"] {
+                --bg-obsidian: #f4f2ee; /* خلفية فاتحة نظيفة بدلاً من الأسود العميق */
+                --accent-gold-bright: #9c6b32; /* ذهبي أغمق قليلاً ليحافظ على التباين فوق الفاتح */
+                --text-pure-white: #100f0d; /* نص داكن بديل الأبيض الناصع */
+                --text-slate-light: #4b5563; /* رمادي داكن واضح للفقرات */
+                --surface-card-dark: #ffffff; /* لون الصناديق في الوضع الفاتح */
             }
 
             * {
@@ -39,6 +65,9 @@
                 font-family: var(--font-sans-ui);
                 overflow-x: hidden;
                 position: relative;
+                transition:
+                    background-color var(--theme-transition),
+                    color var(--theme-transition);
             }
 
             /* 🎬 الستائر المسرحية العكسية عند الدخول لصفحة المعرض */
@@ -123,6 +152,12 @@
                 -webkit-backdrop-filter: blur(20px);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.03);
                 z-index: 1000;
+                transition: background-color var(--theme-transition);
+            }
+
+            :root[data-theme="light"] .navbar {
+                background: rgba(244, 242, 238, 0.85);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             }
 
             .brand {
@@ -131,6 +166,7 @@
                 letter-spacing: 2px;
                 color: var(--text-pure-white);
                 line-height: 1;
+                transition: color var(--theme-transition);
             }
             .brand .logo-dot {
                 color: var(--accent-gold-bright);
@@ -149,15 +185,97 @@
                 font-weight: 600;
                 letter-spacing: 2px;
                 text-transform: uppercase;
-                transition: color 0.4s ease;
+                transition:
+                    color var(--theme-transition),
+                    text-shadow 0.4s ease;
             }
             .navbar-link:hover {
                 color: var(--text-pure-white);
                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             }
 
+            /* 🔙 عناصر زر العودة: نسخة سطح المكتب (نص + أيقونة) ونسخة الهاتف (سهم فقط) */
+            .back-home-link {
+                display: flex;
+                align-items: center;
+            }
+            .back-desktop-view {
+                display: inline-flex;
+                align-items: center;
+            }
+            .back-mobile-icon {
+                display: none;
+                width: 20px;
+                height: 20px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 1.8;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
             .navbar-link i {
                 margin-right: 8px;
+            }
+
+            /* 🌗 زر تبديل الوضع (الظل والنور) — بجانب زر Return To Concept مباشرة */
+            .bar {
+                align-items: center;
+                gap: 30px;
+            }
+
+            .theme-toggle-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                background: transparent;
+                color: var(--text-slate-light);
+                cursor: pointer;
+                transition:
+                    border-color var(--theme-transition),
+                    color var(--theme-transition),
+                    background-color var(--theme-transition),
+                    box-shadow 0.4s ease;
+            }
+
+            :root[data-theme="light"] .theme-toggle-btn {
+                border: 1px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .theme-toggle-btn:hover {
+                color: var(--accent-gold-bright);
+                border-color: var(--accent-gold-bright);
+                box-shadow: 0 0 12px rgba(217, 184, 140, 0.25);
+            }
+
+            .theme-toggle-btn svg {
+                width: 18px;
+                height: 18px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 1.6;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            /* إظهار أيقونة القمر في الوضع الداكن (الحالي) وإخفاء الشمس */
+            .theme-toggle-btn .icon-sun {
+                display: none;
+            }
+            .theme-toggle-btn .icon-moon {
+                display: block;
+            }
+
+            /* عند تفعيل الوضع الفاتح: تنعكس الأيقونتان لتظهر الشمس */
+            :root[data-theme="light"] .theme-toggle-btn .icon-sun {
+                display: block;
+            }
+            :root[data-theme="light"] .theme-toggle-btn .icon-moon {
+                display: none;
             }
 
             /* 🏢 هندسة الفراغات لقسم الاستوديو */
@@ -194,6 +312,7 @@
                 margin-bottom: 15px;
                 font-weight: 700;
                 text-transform: uppercase;
+                transition: color var(--theme-transition);
             }
 
             .portfolio-studio-title {
@@ -204,6 +323,7 @@
                 margin-top: 15px;
                 margin-bottom: 25px;
                 letter-spacing: 1px;
+                transition: color var(--theme-transition);
             }
 
             .portfolio-studio-desc {
@@ -211,6 +331,7 @@
                 color: var(--text-slate-light);
                 line-height: 1.8;
                 font-weight: 300;
+                transition: color var(--theme-transition);
             }
 
             /* 🌟 شبكة الكروت الكروماتية الملونة والمستقرة بصرياً */
@@ -426,6 +547,66 @@
                 box-shadow: 0 20px 40px rgba(89, 89, 89, 0.15);
                 border-color: #333333;
             }
+
+            /* ==========================================================================
+       📱 التجاوب مع الهواتف (Mobile Responsive) — للشاشات 541px فأقل
+       ========================================================================== */
+            @media (max-width: 541px) {
+                /* 🏢 تحويل النافبار إلى شبكة 3 أعمدة: يسار (أزرار) - وسط (لوجو) - يمين (فراغ موازن) */
+                .navbar {
+                    display: grid;
+                    grid-template-columns: 1fr auto 1fr;
+                    align-items: center;
+                    padding: 22px 6%;
+                }
+
+                /* 🏷️ اللوجو يتوسط النافبار تماماً بغض النظر عن مساحة عناصر اليسار */
+                .brand {
+                    grid-column: 2;
+                    justify-self: center;
+                    font-size: 24px;
+                }
+
+                /* 🎛️ أزرار التحكم (السهم + مبدّل الوضع) تتموضع أقصى اليسار تماماً */
+                .bar {
+                    grid-column: 1;
+                    justify-self: start;
+                    gap: 14px;
+                }
+
+                /* 🔙 إخفاء نص "Return To Concept" وأيقونته، وإظهار سهم العودة البسيط بدلاً منه */
+                .back-desktop-view {
+                    display: none;
+                }
+                .back-mobile-icon {
+                    display: inline-flex;
+                }
+
+                /* توحيد شكل زر العودة مع زر تبديل الوضع (دائرة بنفس الحجم) على الهاتف */
+                .back-home-link {
+                    width: 38px;
+                    height: 38px;
+                    justify-content: center;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    color: var(--text-slate-light);
+                    transition:
+                        border-color var(--theme-transition),
+                        color var(--theme-transition);
+                }
+                :root[data-theme="light"] .back-home-link {
+                    border: 1px solid rgba(0, 0, 0, 0.12);
+                }
+                .back-home-link:hover {
+                    color: var(--accent-gold-bright);
+                    border-color: var(--accent-gold-bright);
+                }
+
+                /* توفير مساحة رأسية أنسب لبداية المحتوى تحت النافبار على الهاتف */
+                .section {
+                    padding: 150px 6% 90px 6%;
+                }
+            }
         </style>
     </head>
     <body>
@@ -445,9 +626,36 @@
                 <div class="brand">AHMED<span class="logo-dot">|WEB</span></div>
                 <ul class="bar">
                     <li>
-                        <a href="index.html" class="navbar-link back-home-link"
-                            ><i class="fa-solid fa-arrow-left"></i> Return To Concept</a
-                        >
+                        <a href="index.html" class="navbar-link back-home-link" aria-label="Return To Concept">
+                            <!-- 🖥️ نسخة سطح المكتب: أيقونة فونت أوسم + النص كاملاً -->
+                            <span class="back-desktop-view">
+                                <i class="fa-solid fa-arrow-left"></i> Return To Concept
+                            </span>
+                            <!-- 📱 نسخة الهاتف: سهم عودة بسيط (SVG) بدون نص -->
+                            <svg class="back-mobile-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M19 12H5M11 18l-6-6 6-6" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- 🌗 زر تبديل الظل والنور (Dark / Light Mode) -->
+                        <button
+                            type="button"
+                            id="themeToggleBtn"
+                            class="theme-toggle-btn"
+                            aria-label="تبديل الوضع بين الظل والنور"
+                            title="Toggle Dark / Light Mode">
+                            <!-- أيقونة القمر (تظهر في الوضع الداكن) -->
+                            <svg class="icon-moon" viewBox="0 0 24 24">
+                                <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z" />
+                            </svg>
+                            <!-- أيقونة الشمس (تظهر في الوضع الفاتح) -->
+                            <svg class="icon-sun" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="4.5" />
+                                <path
+                                    d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
+                            </svg>
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -514,9 +722,45 @@
                 }
             }
 
+            // 🌗 منطق تبديل الوضع (الظل والنور) + الحفظ في الـ LocalStorage
+            function initThemeToggle() {
+                const THEME_KEY = "ahmedweb-theme";
+                const root = document.documentElement;
+                const toggleBtn = document.getElementById("themeToggleBtn");
+                if (!toggleBtn) return;
+
+                // 🌑 الوضع الداكن هو الافتراضي الأساسي للموقع دائماً
+                // لا يتحول للوضع الفاتح إلا إذا اختاره الزائر بنفسه عبر الزر (ويُحفظ الاختيار حينها)
+                let currentTheme = localStorage.getItem(THEME_KEY) === "light" ? "light" : "dark";
+                applyTheme(currentTheme, false);
+
+                toggleBtn.addEventListener("click", () => {
+                    currentTheme = currentTheme === "light" ? "dark" : "light";
+                    applyTheme(currentTheme, true);
+                });
+
+                function applyTheme(theme, persist) {
+                    if (theme === "light") {
+                        root.setAttribute("data-theme", "light");
+                    } else {
+                        root.removeAttribute("data-theme");
+                    }
+                    toggleBtn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+
+                    if (persist) {
+                        try {
+                            localStorage.setItem(THEME_KEY, theme);
+                        } catch (e) {
+                            /* تجاهل إن كان التخزين المحلي غير متاح */
+                        }
+                    }
+                }
+            }
+
             // تشغيل سلسلة حركات فتح الستائر المسرحية فور دخول الصفحة
             document.addEventListener("DOMContentLoaded", () => {
                 loadExhibitionProjects();
+                initThemeToggle();
 
                 const portfolioLoader = document.getElementById("portfolio-intro-loader");
                 if (portfolioLoader) {
