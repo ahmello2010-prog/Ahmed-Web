@@ -6,22 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ahmed Wael | Selected Artifacts</title>
 
+        <!-- 🌗 theme.js: تطبيق فوري لوضع الظل/النور المحفوظ قبل رسم الصفحة لمنع وميض التحول (Anti-FOUC) -->
+        <!-- نفس الملف الموحّد المستخدم في index.html لضمان تزامن اختيار الزائر بين الصفحتين -->
+        <script src="jvs/theme.js"></script>
+
         <!-- ملف التنسيق الموحد عالي التباين (Obsidian Onyx) -->
         <link href="css/style.css" rel="stylesheet" />
-
-        <!-- 🌗 تطبيق فوري لوضع الظل/النور المحفوظ قبل رسم الصفحة لمنع وميض التحول (Anti-FOUC) -->
-        <script>
-            (function () {
-                try {
-                    var savedTheme = localStorage.getItem("ahmedweb-theme");
-                    if (savedTheme === "light" || savedTheme === "dark") {
-                        document.documentElement.setAttribute("data-theme", savedTheme);
-                    }
-                } catch (e) {
-                    /* الوصول للـ localStorage غير متاح (وضع خاص مثلاً) — نستمر بالوضع الافتراضي الداكن */
-                }
-            })();
-        </script>
         <style>
             /* ==========================================================================
        THEATRICAL EXHIBITION SPACE - PORTFOLIO STYLES (COMPACT HIGH-CONTRAST)
@@ -722,45 +712,12 @@
                 }
             }
 
-            // 🌗 منطق تبديل الوضع (الظل والنور) + الحفظ في الـ LocalStorage
-            function initThemeToggle() {
-                const THEME_KEY = "ahmedweb-theme";
-                const root = document.documentElement;
-                const toggleBtn = document.getElementById("themeToggleBtn");
-                if (!toggleBtn) return;
-
-                // 🌑 الوضع الداكن هو الافتراضي الأساسي للموقع دائماً
-                // لا يتحول للوضع الفاتح إلا إذا اختاره الزائر بنفسه عبر الزر (ويُحفظ الاختيار حينها)
-                let currentTheme = localStorage.getItem(THEME_KEY) === "light" ? "light" : "dark";
-                applyTheme(currentTheme, false);
-
-                toggleBtn.addEventListener("click", () => {
-                    currentTheme = currentTheme === "light" ? "dark" : "light";
-                    applyTheme(currentTheme, true);
-                });
-
-                function applyTheme(theme, persist) {
-                    if (theme === "light") {
-                        root.setAttribute("data-theme", "light");
-                    } else {
-                        root.removeAttribute("data-theme");
-                    }
-                    toggleBtn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
-
-                    if (persist) {
-                        try {
-                            localStorage.setItem(THEME_KEY, theme);
-                        } catch (e) {
-                            /* تجاهل إن كان التخزين المحلي غير متاح */
-                        }
-                    }
-                }
-            }
+            // ملاحظة: منطق تبديل وحفظ وضع الظل/النور أصبح موحّداً بالكامل
+            // داخل ملف jvs/theme.js المُحمَّل مبكراً في <head> — لا حاجة لأي كود هنا
 
             // تشغيل سلسلة حركات فتح الستائر المسرحية فور دخول الصفحة
             document.addEventListener("DOMContentLoaded", () => {
                 loadExhibitionProjects();
-                initThemeToggle();
 
                 const portfolioLoader = document.getElementById("portfolio-intro-loader");
                 if (portfolioLoader) {
