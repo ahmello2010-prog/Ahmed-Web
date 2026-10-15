@@ -1969,3 +1969,86 @@ ul.bt-light {
         max-height: 220px;
     }
 }
+
+/* ==========================================================================
+   Stage Transition Button — دايماً مشع وجاذب للانتباه
+   توهّج نابض + لمعة تعدّي على الزر + سهم بيتحرك
+   بيعتمد على --accent-gold-bright فبيتكيّف مع الوضع الداكن والنهاري
+   ========================================================================== */
+.stage-transition-btn,
+[data-theme="light"] .stage-transition-btn {
+    border: 1px solid var(--accent-gold-bright) !important;
+    animation: stageGlowPulse 2.4s ease-in-out infinite;
+}
+
+.stage-transition-btn::before {
+    left: -100%;
+    background: linear-gradient(
+        100deg,
+        transparent 20%,
+        color-mix(in srgb, var(--accent-gold-bright) 35%, transparent) 50%,
+        transparent 80%
+    );
+    transition: none;
+    animation: stageShineSweep 3s ease-in-out infinite;
+}
+
+.stage-transition-btn .btn-text {
+    text-shadow: 0 0 14px color-mix(in srgb, var(--accent-gold-bright) 55%, transparent);
+}
+
+.stage-transition-btn .btn-arrow {
+    animation: stageArrowNudge 1.4s ease-in-out infinite;
+}
+
+.stage-transition-btn:hover {
+    animation-play-state: paused;
+    box-shadow:
+        0 0 45px color-mix(in srgb, var(--accent-gold-bright) 55%, transparent),
+        inset 0 0 25px color-mix(in srgb, var(--accent-gold-bright) 18%, transparent);
+}
+
+@keyframes stageGlowPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 8px color-mix(in srgb, var(--accent-gold-bright) 25%, transparent),
+            0 0 0 0 color-mix(in srgb, var(--accent-gold-bright) 35%, transparent);
+    }
+    50% {
+        box-shadow:
+            0 0 28px color-mix(in srgb, var(--accent-gold-bright) 55%, transparent),
+            0 0 0 7px color-mix(in srgb, var(--accent-gold-bright) 0%, transparent);
+    }
+}
+
+@keyframes stageShineSweep {
+    0% {
+        left: -100%;
+    }
+    55%,
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes stageArrowNudge {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stage-transition-btn,
+    .stage-transition-btn::before,
+    .stage-transition-btn .btn-arrow {
+        animation: none !important;
+    }
+    .stage-transition-btn {
+        box-shadow: 0 0 20px color-mix(in srgb, var(--accent-gold-bright) 40%, transparent);
+    }
+}
