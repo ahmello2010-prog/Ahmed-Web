@@ -538,6 +538,31 @@
                 border-color: #333333;
             }
 
+            /* ⚖️ 8. كارت لعبة Judgment — محكمة الأدوار (ألوان اللعبة: كحلي قاتم + ذهبي + كريمي) */
+            .judgment-style {
+                background: #101820;
+                border-color: rgba(213, 167, 92, 0.25);
+            }
+            .judgment-style h4 {
+                color: #d5a75c;
+            }
+            .judgment-style p {
+                color: #ffe9b3;
+            }
+            .judgment-style:hover {
+                box-shadow: 0 20px 40px rgba(213, 167, 92, 0.18);
+                border-color: #d5a75c;
+            }
+
+            .judgment-style .project-img img[src="#"] {
+                display: none;
+            }
+            .judgment-style .project-img:has(img[src="#"])::before {
+                content: "⚖️";
+                font-size: 84px;
+                filter: drop-shadow(0 0 18px rgba(213, 167, 92, 0.45));
+            }
+
             /* ==========================================================================
        📱 التجاوب مع الهواتف (Mobile Responsive) — للشاشات 541px فأقل
        ========================================================================== */

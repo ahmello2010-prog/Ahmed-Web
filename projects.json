@@ -1,5 +1,13 @@
 [
     {
+        "title": "Court of Roles",
+        "description": "Click here to preview the project (MOBILE ONLY)",
+        "link": "https://judgment-lyart.vercel.app",
+        "image": "img/judd.jpeg",
+        "icon": "fa-solid fa-arrow-up-right-from-square",
+        "class": "judgment-style"
+    },
+    {
         "title": "Little Plants",
         "description": "Click here to preview the project",
         "link": "https://little-plants.vercel.app/",
