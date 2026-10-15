@@ -538,37 +538,39 @@ body.loaded main {
 }
 
 .skills-minimal-shelf {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
     width: 100%;
     max-width: 550px;
 }
 
 .skill-pill-item {
-    flex: 1;
-    min-width: 120px;
+    min-width: 0;
     background: var(--surface-card-dark);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 16px 20px;
+    padding: 14px 6px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    text-align: center;
+    gap: 8px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .skill-pill-item i {
-    font-size: 20px;
+    font-size: 22px;
     color: var(--text-slate-light);
     transition:
         transform 0.3s,
         color 0.3s;
 }
 .skill-pill-item span {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
     color: var(--text-slate-light);
     transition: color 0.3s;
 }
@@ -610,6 +612,33 @@ body.loaded main {
 .json-pill:hover i,
 .json-pill:hover span {
     color: var(--accent-gold-bright);
+}
+
+.git-pill:hover {
+    border-color: #f05032;
+    box-shadow: 0 10px 25px rgba(240, 80, 50, 0.1);
+}
+.git-pill:hover i,
+.git-pill:hover span {
+    color: #f05032;
+}
+
+.github-pill:hover {
+    border-color: var(--text-pure-white);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.06);
+}
+.github-pill:hover i,
+.github-pill:hover span {
+    color: var(--text-pure-white);
+}
+
+.responsive-pill:hover {
+    border-color: #14b8a6;
+    box-shadow: 0 10px 25px rgba(20, 184, 166, 0.1);
+}
+.responsive-pill:hover i,
+.responsive-pill:hover span {
+    color: #14b8a6;
 }
 
 .stage-transition-btn {
@@ -1681,15 +1710,26 @@ ul.bt-light {
 
     .skills-minimal-shelf {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 6px !important;
         width: 100% !important;
         max-width: 100% !important;
     }
 
     .skill-pill-item {
-        padding: 12px !important;
-        min-width: unset !important;
+        padding: 10px 2px !important;
+        min-width: 0 !important;
+        gap: 6px !important;
+    }
+
+    .skill-pill-item i {
+        font-size: 18px !important;
+    }
+
+    .skill-pill-item span {
+        font-size: 8px !important;
+        letter-spacing: 0.2px !important;
+        overflow-wrap: anywhere;
     }
 
     .stage-transition-btn {
