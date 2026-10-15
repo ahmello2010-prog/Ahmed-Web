@@ -177,11 +177,78 @@
                             </div>
 
                             <div class="form-group">
-                                <label>YOUR STANDING</label>
-                                <select id="user-type" class="form-input">
-                                    <option value="client">Potential Client</option>
-                                    <option value="student">Fellow Student / Developer</option>
-                                </select>
+                                <label id="standingLabel">YOUR STANDING</label>
+
+                                <div class="custom-select" id="standingSelect">
+                                    <!-- القيمة اللي بتتبعت فعلياً (نفس id القديم عشان sendEmail تفضل شغالة) -->
+                                    <input type="hidden" id="user-type" value="Individual Client" />
+
+                                    <button
+                                        type="button"
+                                        class="custom-select-trigger form-input"
+                                        aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                        aria-labelledby="standingLabel">
+                                        <span class="custom-select-value">Individual Client</span>
+                                        <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
+                                    </button>
+
+                                    <ul class="custom-select-options" role="listbox" aria-labelledby="standingLabel">
+                                        <li
+                                            role="option"
+                                            tabindex="-1"
+                                            data-value="Individual Client"
+                                            class="selected"
+                                            aria-selected="true">
+                                            <i class="fa-solid fa-user"></i> Individual Client
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Startup Founder">
+                                            <i class="fa-solid fa-rocket"></i> Startup Founder
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Small Business Owner">
+                                            <i class="fa-solid fa-store"></i> Small Business Owner
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Company / Corporate">
+                                            <i class="fa-solid fa-building"></i> Company / Corporate
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Agency / Studio">
+                                            <i class="fa-solid fa-people-group"></i> Agency / Studio
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="E-commerce Store Owner">
+                                            <i class="fa-solid fa-cart-shopping"></i> E-commerce Store Owner
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Recruiter / HR">
+                                            <i class="fa-solid fa-briefcase"></i> Recruiter / HR
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Investor / Sponsor">
+                                            <i class="fa-solid fa-hand-holding-dollar"></i> Investor / Sponsor
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Freelancer / Fellow Developer">
+                                            <i class="fa-solid fa-laptop-code"></i> Freelancer / Fellow Developer
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Designer / Creative">
+                                            <i class="fa-solid fa-palette"></i> Designer / Creative
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Student / Learner">
+                                            <i class="fa-solid fa-graduation-cap"></i> Student / Learner
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Educational Institution">
+                                            <i class="fa-solid fa-school"></i> Educational Institution
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Non-profit / NGO">
+                                            <i class="fa-solid fa-hands-holding-heart"></i> Non-profit / NGO
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Content Creator / Influencer">
+                                            <i class="fa-solid fa-video"></i> Content Creator / Influencer
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Media / Journalist">
+                                            <i class="fa-solid fa-newspaper"></i> Media / Journalist
+                                        </li>
+                                        <li role="option" tabindex="-1" data-value="Other">
+                                            <i class="fa-solid fa-ellipsis"></i> Other
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="form-group">

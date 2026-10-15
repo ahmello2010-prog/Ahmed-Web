@@ -285,3 +285,83 @@ function dismissTooltip(event) {
         badge.style.display = "none"; // Closes or completely deletes the sub-text box
     }
 }
+
+// ==========================================
+// Custom Select (YOUR STANDING) — UL/LI
+// ==========================================
+function initCustomSelect() {
+    const select = document.getElementById("standingSelect");
+    if (!select) return;
+
+    const trigger = select.querySelector(".custom-select-trigger");
+    const valueLabel = select.querySelector(".custom-select-value");
+    const hiddenInput = document.getElementById("user-type");
+    const options = Array.from(select.querySelectorAll(".custom-select-options li"));
+    const defaultOption = options.find((o) => o.classList.contains("selected")) || options[0];
+
+    function openList() {
+        select.classList.add("open");
+        trigger.setAttribute("aria-expanded", "true");
+        const current = options.find((o) => o.classList.contains("selected")) || options[0];
+        current.focus();
+    }
+
+    function closeList(returnFocus) {
+        select.classList.remove("open");
+        trigger.setAttribute("aria-expanded", "false");
+        if (returnFocus) trigger.focus();
+    }
+
+    function chooseOption(li) {
+        options.forEach((o) => {
+            o.classList.remove("selected");
+            o.setAttribute("aria-selected", "false");
+        });
+        li.classList.add("selected");
+        li.setAttribute("aria-selected", "true");
+        hiddenInput.value = li.dataset.value;
+        valueLabel.textContent = li.dataset.value;
+    }
+
+    trigger.addEventListener("click", () => {
+        select.classList.contains("open") ? closeList(false) : openList();
+    });
+
+    options.forEach((li, index) => {
+        li.addEventListener("click", () => {
+            chooseOption(li);
+            closeList(true);
+        });
+
+        li.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                (options[index + 1] || options[0]).focus();
+            } else if (e.key === "ArrowUp") {
+                e.preventDefault();
+                (options[index - 1] || options[options.length - 1]).focus();
+            } else if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                chooseOption(li);
+                closeList(true);
+            } else if (e.key === "Escape") {
+                closeList(true);
+            }
+        });
+    });
+
+    // إغلاق عند الضغط خارج القائمة
+    document.addEventListener("click", (e) => {
+        if (!select.contains(e.target)) closeList(false);
+    });
+
+    // إعادة القيمة الافتراضية بعد form.reset() (بعد الإرسال الناجح)
+    const form = select.closest("form");
+    if (form) {
+        form.addEventListener("reset", () => {
+            setTimeout(() => chooseOption(defaultOption), 0);
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", initCustomSelect);
